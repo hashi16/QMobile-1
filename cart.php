@@ -1,4 +1,32 @@
-<?php include('dbconnection.php') ?>
+<?php include('dbconnection.php');
+include('include_store\component.php');
+
+
+if(isset($_POST['remove'])){
+ if($_GET['action'] == 'remove'){
+   foreach ($_SESSION['cart'] as $key => $value) {
+     if ($value["product_id"] == $_GET['id']) {
+       unset($_SESSION['cart'][$key]);
+       echo "<script>alert('Product has been removed..')</script>";
+       echo "<script>window.location = 'cart.php'</script>";
+     }
+   }
+ }
+}
+
+
+//
+// if (!isLoggedIn()) {
+// $_SESSION['msg'] = "You must log in first";
+// header('location: login.php');
+
+//}
+
+//$link = mysqli_connect("localhost", "root", "", "cabservice");
+// $n=$_SESSION['user']['username'];
+// $sql = "SELECT * FROM user WHERE username ='$n'";
+
+ ?>
 
 
 <!doctype html>
@@ -13,7 +41,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
-    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/Custom.css">
 
     <title>Cart</title>
 </head>
@@ -84,83 +112,88 @@
         </div>
     </div>
 
-    <!--Cart checkout-->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9">
-                <div class="card card-body">
-					<form action="cart.php" method="post" enctype="multipart/form-data">
-						<h2>Cart <span class="fa fa-shopping-cart fa-lg"></span></h2>
-						<p class="text-muted">0 item(s) in your cart!</p>
-						<div class="tabel-responsive">
-							<table class="table table-striped">
-								<thead>
-									<tr>
-										<th colspan="2"> Product</th>
-										<th>Quantity</th>
-										<th>Unit Price</th>
-										<th colspan="1">Delete</th>
-										<th colspan="2">Sub Total</th>
-									</tr>
-								</thead>
-								<tbody>
-								</tbody>
-								<tfoot>
-									<tr>
-										<th colspan="5">Total</th>
-										<th colspan="2">Rs 0</th>
-									</tr>
-								</tfoot>
-							</table><br>
-						</div>
-						<div class="box-footer">
-							<div class="pull-left">
-								<a href="index.html" class="btn btn-default bg-info">
-									<i class="fa fa-chevron-left"></i> Continue Shopping
-								</a>
-							</div>
-							<div class="pull-right">
-								<button class="btn btn-default bg-secondary" type="submit" name="update" value="Update">
-									<i class="fa fa-refresh"></i> Update
-								</button>
-								<a href="order.html" class="btn btn-success">Checkout <i class="fa fa-chevron-right"></i>
-								</a>
-							</div>
-						</div>
-					</form>
-				</div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card" id="order-details">
-					<div class="card-header bg-secondary">
-						<h3>Summary</h3>
-					</div>
-					<p class="text-muted align-self-center">
-						Your all costs are calculated here
-					</p>
-					<div class="tabel-responsive">
-						<table class="table">
-							<tbody>
-								<tr>
-									<td>SubTotal</td>
-									<th> Rs 0</th>
-								</tr>
-								<tr>
-									<td>Delivery Cost</td>
-									<th> Rs 0</th>
-								</tr>
-								<tr class="total">
-									<td>Total</td>
-									<th>Rs 0</th>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-            </div>
-        </div><br>
-    </div>
+
+
+
+
+    <!--Cart.php strt checkout-->
+    <div class="container-fluid">
+      <div class="row px-5">
+        <div class="col-md-7">
+          <div class="shopping-cart">
+            <h4>My Cart</h4>
+             <hr>
+           <?php
+           $total = 0;
+            if(isset($_SESSION['cart'])){
+              $product_id= array_column($_SESSION['cart'],'product_id');
+               $sql = "SELECT * FROM product";
+              //
+             $result = mysqli_query($db,$sql);
+
+               while ($row = mysqli_fetch_assoc($result)) {
+                foreach($product_id as $id){
+                  if($row['id'] == $id){
+                    cartElement($row['product_image'],$row['product_name'],$row['product_price'],$row['product_qty'],$row['id']);
+                      $total = $total+(int)($row['product_price']);
+                  }
+                }
+               }
+            }else {
+              echo "<h5>Cart is Empty</h5>";
+            }
+            ?>
+          </div>
+      </div>
+
+
+      <div class="col-sm-5">
+           <div class="card-header" id="bg-secondary">
+             <div class="card-header bg-primary">
+               <h3>PRICE DETAILS</h3>
+
+
+             </div>
+
+             <div class="row price-details">
+               <div class="col-md-6">
+                 <?php
+                 if(isset($_SESSION['cart'])){
+                   $count = count($_SESSION['cart']);
+                   echo "<h6><b>Price($count items)</b></h6>";
+                 }else {
+                   echo "<h6><b>Price(0 items)<b></h6>";
+                 }
+                 ?>
+                 <h6><b>Deleivery Charges</b></h6>
+                 <hr>
+                 <h6><b>Amount Paybale</b></h6>
+
+               </div>
+               <!-- <h6>Rs <?php  //echo $total; ?></h6> -->
+
+               <div class="col-md-6">
+                 <div class="bg-warning">
+                    <h6>Rs <?php echo $total;?></h6>
+                 </div>
+
+                 <h6 class="text-success">FREE</h6>
+                 <hr>
+                 <div class="bg-danger">
+                   <h6>Rs <?php echo $total; ?></h6>
+                 </div>
+
+
+               </div>
+             </div>
+           </div>
+         </div>
+ </div>
+</div>
+
+
+
+
 
     <!-- Footer -->
   <?php include('footer.php') ?>

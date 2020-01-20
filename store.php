@@ -1,8 +1,39 @@
-<?php include('dbconnection.php') ?>
+<?php
+include('include_store\component.php');
+include('dbconnection.php');
+
+if(isset($_POST['add'])){
+  //print_r($_POST['product_id']);
 
 
+  if(isset($_SESSION['cart'])){
+    $item_array_id = array_column($_SESSION['cart'],"product_id");
+    // print_r($item_array_id);
+    if(in_array($_POST['product_id'],$item_array_id)){
+      echo "<script>alert('Product is already added in the cart..')</script>";
+      echo "<script>window.location = 'store.php'</script>";
+    }else {
+      $count = count($_SESSION['cart']);
+      $item_array=array(
+        'product_id' => $_POST['product_id']
+      );
+      $_SESSION['cart'][$count] = $item_array;
+      // print_r($_SESSION['cart']);
+    }
+  }else {
+    $item_array=array(
+      'product_id' => $_POST['product_id']
+    );
+    //cerate new session variable
+    $_SESSION['cart'][0] = $item_array;
+     //print_r($_SESSION['cart']);
+  }
+}
 
 
+// include('cart.php');
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,7 +49,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha256-qvCL5q5O0hEpOm1CgOLQUuHzMusAZqDcAZL9ijqfOdI=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.css" integrity="sha256-+bpMasWDxDlsVpNW3oZlL7L4RacwsP70u2fZt6Rxrmc=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css" integrity="sha256-G3IAYJYIQvZgPksNQDbjvxd/Ca1SfCDFwu2s2lt0oGo=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./css/custom.css">
+    <link rel="stylesheet" href="./css/Custom.css">
 
     <title>Store</title>
 </head>
@@ -84,7 +115,7 @@
    <div class="container">
        <div class="row">
            <ol class="col-12 breadcrumb">
-               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+               <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
                <li class="breadcrumb-item active">Store</li>
            </ol>
        </div>
@@ -115,8 +146,10 @@
            </div>
 
            <div class="col-md-9">
+
+             <?php include('include_store\header.php'); ?>
                <!--Filter price range-->
-               <div class="row">
+               <!-- <div class="row">
                    <div class="col-12">
                        <div class="card card-body bg-light">
                            <form class="form-inline" method="post" enctype="multipart/form-data">
@@ -135,188 +168,15 @@
                            </form>
                        </div><br>
                    </div>
-               </div>
+               </div> -->
                <!--Store Products-->
-               <div class="row">
-                   <div class="col-6 col-md-3">
-                       <div class="product-top">
-                           <img src="./Resourses/product/pr1.jpg">
-                           <div class="overlay-right">
-                               <button type="button" class="btn btn-secondary" title="Quick Shop">
-                                   <a href="product.php"><i class="fas fa-eye"></i></a>
-                               </button>
-                               <button type="button" class="btn btn-secondary" title="Add To Cart">
-                               <i class="fas fa-shopping-cart"></i>
-                               </button>
-                           </div>
-                       </div>
-                       <div class="product-bottom text-center">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star-half-alt"></i>
-                           <h4>Samsung A10</h4>
-                           <h5>Rs.7300.00</h5>
-                       </div>
-                   </div>
-                   <div class="col-6 col-md-3">
-                       <div class="product-top">
-                           <img src="./Resourses/product/pr2.jpg">
-                           <div class="overlay-right">
-                               <button type="button" class="btn btn-secondary" title="Quick Shop">
-                               <i class="fas fa-eye"></i>
-                               </button>
-                               <button type="button" class="btn btn-secondary" title="Add To Cart">
-                               <i class="fas fa-shopping-cart"></i>
-                               </button>
-                           </div>
-                       </div>
-                       <div class="product-bottom text-center">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <h4>Huwaei Nova 5T</h4>
-                           <h5>Rs.11000.00</h5>
-                       </div>
-                   </div>
-                   <div class="col-6 col-md-3">
-                       <div class="product-top">
-                           <img src="./Resourses/product/pr3.jpg">
-                           <div class="overlay-right">
-                               <button type="button" class="btn btn-secondary" title="Quick Shop">
-                               <i class="fas fa-eye"></i>
-                               </button>
-                               <button type="button" class="btn btn-secondary" title="Add To Cart">
-                               <i class="fas fa-shopping-cart"></i>
-                               </button>
-                           </div>
-                       </div>
-                       <div class="product-bottom text-center">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star-half-alt"></i>
-                           <h4>Oppo F11 Pro</h4>
-                           <h5>Rs.15000.00</h5>
-                       </div>
-                   </div>
-                   <div class="col-6 col-md-3">
-                       <div class="product-top">
-                           <img src="./Resourses/product/pr4.jpg">
-                           <div class="overlay-right">
-                               <button type="button" class="btn btn-secondary" title="Quick Shop">
-                               <i class="fas fa-eye"></i>
-                               </button>
-                               <button type="button" class="btn btn-secondary" title="Add To Cart">
-                               <i class="fas fa-shopping-cart"></i>
-                               </button>
-                           </div>
-                       </div>
-                       <div class="product-bottom text-center">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star-half-alt"></i>
-                           <i class="far fa-star"></i>
-                           <h4>Nokia 6.1Plus</h4>
-                           <h5>Rs.5500.00</h5>
-                       </div>
-                   </div>
-               </div>
-               <div class="row">
-                   <div class="col-6 col-md-3">
-                       <div class="product-top">
-                           <img src="./Resourses/product/pr5.jpg">
-                           <div class="overlay-right">
-                               <button type="button" class="btn btn-secondary" title="Quick Shop">
-                               <i class="fas fa-eye"></i>
-                               </button>
-                               <button type="button" class="btn btn-secondary" title="Add To Cart">
-                               <i class="fas fa-shopping-cart"></i>
-                               </button>
-                           </div>
-                       </div>
-                       <div class="product-bottom text-center">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star-half-alt"></i>
-                           <h4>Phone Charger</h4>
-                           <h5>Rs.800.00</h5>
-                       </div>
-                   </div>
-                   <div class="col-6 col-md-3">
-                       <div class="product-top">
-                       <img src="./Resourses/product/pr6.jpg">
-                           <div class="overlay-right">
-                               <button type="button" class="btn btn-secondary" title="Quick Shop">
-                               <i class="fas fa-eye"></i>
-                               </button>
-                               <button type="button" class="btn btn-secondary" title="Add To Cart">
-                               <i class="fas fa-shopping-cart"></i>
-                               </button>
-                           </div>
-                       </div>
-                       <div class="product-bottom text-center">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <h4>Handfree</h4>
-                           <h5>Rs.1000.00</h5>
-                       </div>
-                   </div>
-                   <div class="col-6 col-md-3">
-                       <div class="product-top">
-                           <img src="./Resourses/product/pr7.jpg">
-                           <div class="overlay-right">
-                               <button type="button" class="btn btn-secondary" title="Quick Shop">
-                               <i class="fas fa-eye"></i>
-                               </button>
-                               <button type="button" class="btn btn-secondary" title="Add To Cart">
-                               <i class="fas fa-shopping-cart"></i>
-                               </button>
-                           </div>
-                       </div>
-                       <div class="product-bottom text-center">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star-half-alt"></i>
-                           <h4>Wireless Charger</h4>
-                           <h5>Rs.3300.00</h5>
-                       </div>
-                   </div>
-                   <div class="col-6 col-md-3">
-                       <div class="product-top">
-                           <img src="./Resourses/product/pr8.jpg">
-                           <div class="overlay-right">
-                               <button type="button" class="btn btn-secondary" title="Quick Shop">
-                               <i class="fas fa-eye"></i>
-                               </button>
-                               <button type="button" class="btn btn-secondary" title="Add To Cart">
-                               <i class="fas fa-shopping-cart"></i>
-                               </button>
-                           </div>
-                       </div>
-                       <div class="product-bottom text-center">
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star"></i>
-                           <i class="fas fa-star-half-alt"></i>
-                           <i class="far fa-star"></i>
-                           <h4>AirPods</h4>
-                           <h5>Rs.2700.00</h5>
-                       </div>
-                   </div>
-               </div>
+
+<div class="row">
+<?php
+    getProduct();
+   ?>
+</div>
+<!-- </div> -->
                <!--Paginations-->
                <div class="row">
                    <div class="col-md-12">

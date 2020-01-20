@@ -107,7 +107,7 @@ if(isset($_POST['register'])){
         // $_SESSION['username'] = $username;
          //$_SESSION['email'] = $email;
          $_SESSION['success'] = "New user succefully created";
-         header('location: home.php');
+         header('location: index.php');
        }
      }//username already exits
          $sql_u = "SELECT * FROM user WHERE username='$username'";
@@ -173,6 +173,8 @@ function isLoggedIn(){
   }else{
     return false;
   }
+
+
 }
 // log user out if logout button clicked
 if (isset($_GET['logout'])) {
@@ -313,8 +315,8 @@ if (isset($_GET['logout'])) {
  //   $isValidLogin = mysqli_num_rows($resultSet);
  //   if($isValidLogin){
  //     if(!empty($_POST['remember'])){
- //       // setcookie("username", $username,time()+ (10*365*24*60*60*));
- //       // setcookie("password", $password,time()+ (10*365*24*60*60*));
+ //        setcookie("username", $username,time()+ (10*365*24*60*60*));
+ //        setcookie("password", $password,time()+ (10*365*24*60*60*));
  //     }else{
  //       setcookie("username","");
  //       setcookie("password","");
@@ -402,6 +404,26 @@ if (isset($_GET['logout'])) {
      //
      //
      //
+
+     //store.php
+
+  function getProduct(){
+    global $db;
+    $sql = "SELECT * FROM product";
+
+    $result = mysqli_query($db,$sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($result)){
+        store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id']);
+
+
+
+}
+}
+
 
 
 

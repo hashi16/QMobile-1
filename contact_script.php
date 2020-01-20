@@ -1,6 +1,4 @@
 <?php
-
-
 if(isset($_POST['send'])){
 
   $fname = $_POST['fname'];
@@ -19,17 +17,7 @@ if(isset($_POST['send'])){
   //$txt1 = "Telephone number:".$telnum;
 
   $headers .="Content-type:text/html;charset=UTF-8" . "\r\n";
-  /*$message ="";
-  "<html>
-  <head>
-    <title>New message from website contact form</title>
-  </head>
 
-  <body>
-    <h1>" . $msg."</h1>
-    <p>".$feedback."</p>
-  </body>
-  </html>";*/
   if(mail($mailTo, $subject, $txt, $headers)){
     echo "Email sent";
   }else{

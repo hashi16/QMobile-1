@@ -13,7 +13,7 @@ include('contact_script.php');
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
-  <link rel="stylesheet" href="./css/custom.css">
+  <link rel="stylesheet" href="./css/Custom.css">
 
     <title>Contact Us</title>
 
@@ -111,7 +111,7 @@ include('contact_script.php');
                             <!-- Button -->
                             <div class="btn-group offset-3" role="group">
                                 <a role="button" class="btn btn-primary" href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
-                                <a role="button" class="btn btn-info"><i class="fa fa-skype"></i> Skype</a>
+
                                 <a role="button" class="btn btn-success" href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
                             </div>
                         </dl>
@@ -198,6 +198,8 @@ include('contact_script.php');
                 </div>
             </div>
         </div>
+
+        <?php include('footer.php'); ?>
 
   </body>
 </html>

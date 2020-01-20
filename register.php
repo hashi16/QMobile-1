@@ -59,7 +59,7 @@ include('dbconnection.php')
                 </form>
                 <div class="menu-bar">
                   <ul>
-                      <li><a href="register.php">Register <i class="fas fa-user-plus fa-dark"></i></a></li>
+                      <li><a href="login.php">Login <i class="fas fa-user-plus fa-dark"></i></a></li>
                   </ul>
               </div>
             </div>

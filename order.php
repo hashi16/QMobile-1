@@ -1,5 +1,18 @@
-<?php include('dbconnection.php') ?>
+<?php include('dbconnection.php');
+include('include_store\component.php');
 
+if(isset($_POST['order'])){
+ if($_GET['action'] == 'order'){
+   foreach ($_SESSION['cart'] as $key => $value) {
+     if ($value["product_id"] == $_GET['id']) {
+       unset($_SESSION['cart'][$key]);
+       echo "<script>alert('Product has been removed..')</script>";
+       echo "<script>window.location = 'order.php'</script>";
+     }
+   }
+ }
+}
+?>
 
 <!doctype html>
 <html lang="en">
