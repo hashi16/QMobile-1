@@ -146,52 +146,54 @@ if(isset($_POST['add'])){
            </div>
 
            <div class="col-md-9">
-                <?php include('include_store\header.php'); ?>
-                <!--Filter price range-->
-                <div class="row">
-                   <div class="col-12">
-                        <div class="card card-body bg-light">
-                            <form class="form-inline" method="post" enctype="multipart/form-data">
-                                <label for="">Price Range: &nbsp;</label>
-                                <div class="form-group">
-                                    <label for="">Min (Rs:) &nbsp;</label>
-                                    <input type="text" class="form-control" name="minPrice" pattern="[0-9]*">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">&nbsp; Max (Rs:)  &nbsp;</label>
-                                    <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*"> &nbsp; &nbsp;
-                                </div>
-                                <div class="form-group text-center">
-                                    <input type="submit" value="Sort" name="priceSort" class="btn btn-success">
-                                </div>
-                            </form>
-                       </div><br>
-                    </div>
-                </div>
-               <!--Store Products-->
-                <div class="row">
-                <?php
-                    getProduct();
-                ?>
-                </div><br>
 
-                <!--Paginations-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#" tabindex="+1">Next</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+             <?php include('include_store\header.php'); ?>
+               <!--Filter price range-->
+               <!-- <div class="row">
+                   <div class="col-12">
+                       <div class="card card-body bg-light">
+                           <form class="form-inline" method="post" enctype="multipart/form-data">
+                               <label for="">Price Range: &nbsp;</label>
+                               <div class="form-group">
+                                   <label for="">Min (Rs:) &nbsp;</label>
+                                   <input type="text" class="form-control" name="minPrice" pattern="[0-9]*">
+                               </div>
+                               <div class="form-group">
+                                   <label for="">&nbsp; Max (Rs:)  &nbsp;</label>
+                                   <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*"> &nbsp; &nbsp;
+                               </div>
+                               <div class="form-group text-center">
+                                   <input type="submit" value="Sort" name="priceSort" class="btn btn-success">
+                               </div>
+                           </form>
+                       </div><br>
+                   </div>
+               </div> -->
+               <!--Store Products-->
+
+<div class="row">
+<?php
+    getProduct();
+   ?>
+</div>
+<!-- </div> -->
+               <!--Paginations-->
+               <div class="row">
+                   <div class="col-md-12">
+                       <nav aria-label="Page navigation example">
+                           <ul class="pagination justify-content-center">
+                               <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+                               <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                               <li class="page-item"><a class="page-link" href="#">2</a></li>
+                               <li class="page-item"><a class="page-link" href="#">3</a></li>
+                               <li class="page-item"><a class="page-link" href="#" tabindex="+1">Next</a></li>
+                           </ul>
+                       </nav>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
 
     <!-- Footer -->
 

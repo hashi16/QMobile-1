@@ -47,7 +47,7 @@ if(isset($_POST['order'])){
                         <a class="nav-link" href="about.php"><span class="fa fa-info fa-lg"></span> About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contactus.php"><span class="fa fa-address-card fa-lg"></span> Contact Us</a>
+                        <a class="nav-link" href="contact.php"><span class="fa fa-address-card fa-lg"></span> Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="store.php"><span class="fas fa-warehouse fa-lg"></span> Store</a>

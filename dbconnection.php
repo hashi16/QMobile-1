@@ -130,7 +130,7 @@ if(isset($_POST['register'])){
        $logged_in_user_id = mysqli_insert_id($db);
 
        $_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
-			// $_SESSION['success']  = "You are now logged in";
+			 $_SESSION['success']  = "You are now logged in";
 			header('location: index.php');
      }
 
@@ -424,13 +424,13 @@ if (isset($_GET['logout'])) {
 }
 }
 
-if(isset($_POST['order'])){
-  order();
-}
-
-function order(){
-  $db;
-}
+// if(isset($_POST['order'])){
+//   order();
+// }
+//
+// function order(){
+//   $db;
+// }
 
 
 

@@ -12,7 +12,7 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
           <div class=\"card-body\">
             <div class=\"overlay-right\">
                 <button type=\"button\" class=\"btn btn-warning\" title=\"Quick Shop\">
-                    <a href=\"store.php\"><i class=\"fas fa-eye\"></i></a>
+                    <a href=\"product.php\"><i class=\"fas fa-eye\"></i></a>
                 </button>
                 <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
                  <input type='hidden' name='product_id' value='$productid'>
@@ -35,8 +35,6 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
  </div>
 </div>
 
-
-
 ";
 echo $element;
 }
@@ -58,6 +56,7 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
 
            <button type=\"submit\" name=\"order\" class=\"btn btn-warning\">Order</button>
            
+
            <button type=\"submit\" name=\"remove\" class=\"btn btn-danger mx-2\">Remove</button>
         </div>
         <div class=\"col-md-3 py-5\">
