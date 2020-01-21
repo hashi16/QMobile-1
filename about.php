@@ -100,7 +100,7 @@
                                 <dd class="col-6">Mount Lavinia, </dd>
                                 <dd class="col-6"><i class="fa fa-fax"></i>: +9411 234 5678</dd>
                                 <dd class="col-6">Sri Lanka.</dd>
-                                <dd class="col-6"><i class="fa fa-envelope"></i>:<a href="mailto:confusion@food.net"> qmobile@gmail.com</a></dd>
+                                <dd class="col-6"><i class="fa fa-envelope"></i>:<a href="mailto:qmobile@gmail.com"> qmobile@gmail.com</a></dd>
                             </dl>
                             <dl class="row">
                                 <dd class="col-12">
@@ -112,8 +112,8 @@
                             <dl class="row">
                                 <!-- Button -->
                                 <div class="btn-group justify-content-center offset-2 offset-sm-4" role="group">
-                                    <a role="button" class="btn btn-primary" href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
-                                    <a role="button" class="btn btn-success" href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
+                                    <a role="button" class="btn btn-primary" href="tel:+94112345678"><i class="fa fa-phone"></i> Call</a>
+                                    <a role="button" class="btn btn-success" href="mailto:qmobile@gmail.com"><i class="fa fa-envelope-o"></i> Email</a>
                                 </div>
                             </dl>
                         </div>
