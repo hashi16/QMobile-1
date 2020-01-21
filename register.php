@@ -69,7 +69,7 @@ include('dbconnection.php')
     <!-- Breadcrumb -->
     <div class="container">
         <div class="row">
-            <ol class="col-12 breadcrumb">          <!--./index.html-->
+            <ol class="col-12 breadcrumb">          <!--./index.php-->
                 <li class="breadcrumb-item"><a href="index.php">Home</a></li>
                 <li class="breadcrumb-item active">Register</li>
             </ol>

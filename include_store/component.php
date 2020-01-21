@@ -50,11 +50,10 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
           <img src=\"$productimg\" alt=\"image1\" class=\"img-fluid\">
         </div>
         <div class=\"col-md-6\">
-          <h5 class=\"pt-2\">$productname</h5>
-          <small class=\"text-secondary\">Seller:dailytuition</small>
+          <h5 class=\"pt-2\"><strong>$productname</strong></h5>
            <h5 class=\"pt-2\">Rs.$productprice</h5>
 
-           <button type=\"submit\" name=\"order\" class=\"btn btn-warning\">Order</button>
+           <button type=\"submit\" name=\"order\" class=\"btn btn-success\">Order</button>
            
 
            <button type=\"submit\" name=\"remove\" class=\"btn btn-danger mx-2\">Remove</button>

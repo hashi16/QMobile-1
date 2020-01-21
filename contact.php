@@ -86,7 +86,7 @@ include('contact_script.php');
         <div class="container">
             <div class="row">
                 <ol class="col-12 breadcrumb">
-                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
                     <li class="breadcrumb-item active">Contact</li>
                 </ol>
             </div>
