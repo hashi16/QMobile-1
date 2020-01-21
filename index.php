@@ -196,9 +196,6 @@ include('dbconnection.php');
                            <button type="button" class="btn btn-secondary" title="Quick Shop">
                                <a href="product.php"><i class="fas fa-eye"></i></a>
                            </button>
-                           <button type="button" class="btn btn-secondary" title="Add To Wishlist">
-                           <i class="fas fa-heart"></i>
-                           </button>
                            <button type="button" class="btn btn-secondary" title="Add To Cart">
                            <i class="fas fa-shopping-cart"></i>
                            </button>
@@ -220,9 +217,6 @@ include('dbconnection.php');
                        <div class="overlay-right">
                            <button type="button" class="btn btn-secondary" title="Quick Shop">
                            <i class="fas fa-eye"></i>
-                           </button>
-                           <button type="button" class="btn btn-secondary" title="Add To Wishlist">
-                           <i class="fas fa-heart"></i>
                            </button>
                            <button type="button" class="btn btn-secondary" title="Add To Cart">
                            <i class="fas fa-shopping-cart"></i>
@@ -246,9 +240,6 @@ include('dbconnection.php');
                            <button type="button" class="btn btn-secondary" title="Quick Shop">
                            <i class="fas fa-eye"></i>
                            </button>
-                           <button type="button" class="btn btn-secondary" title="Add To Wishlist">
-                           <i class="fas fa-heart"></i>
-                           </button>
                            <button type="button" class="btn btn-secondary" title="Add To Cart">
                            <i class="fas fa-shopping-cart"></i>
                            </button>
@@ -270,9 +261,6 @@ include('dbconnection.php');
                        <div class="overlay-right">
                            <button type="button" class="btn btn-secondary" title="Quick Shop">
                            <i class="fas fa-eye"></i>
-                           </button>
-                           <button type="button" class="btn btn-secondary" title="Add To Wishlist">
-                           <i class="fas fa-heart"></i>
                            </button>
                            <button type="button" class="btn btn-secondary" title="Add To Cart">
                            <i class="fas fa-shopping-cart"></i>
@@ -298,9 +286,6 @@ include('dbconnection.php');
                            <button type="button" class="btn btn-secondary" title="Quick Shop">
                            <i class="fas fa-eye"></i>
                            </button>
-                           <button type="button" class="btn btn-secondary" title="Add To Wishlist">
-                           <i class="fas fa-heart"></i>
-                           </button>
                            <button type="button" class="btn btn-secondary" title="Add To Cart">
                            <i class="fas fa-shopping-cart"></i>
                            </button>
@@ -322,9 +307,6 @@ include('dbconnection.php');
                        <div class="overlay-right">
                            <button type="button" class="btn btn-secondary" title="Quick Shop">
                            <i class="fas fa-eye"></i>
-                           </button>
-                           <button type="button" class="btn btn-secondary" title="Add To Wishlist">
-                           <i class="fas fa-heart"></i>
                            </button>
                            <button type="button" class="btn btn-secondary" title="Add To Cart">
                            <i class="fas fa-shopping-cart"></i>
@@ -348,9 +330,6 @@ include('dbconnection.php');
                            <button type="button" class="btn btn-secondary" title="Quick Shop">
                            <i class="fas fa-eye"></i>
                            </button>
-                           <button type="button" class="btn btn-secondary" title="Add To Wishlist">
-                           <i class="fas fa-heart"></i>
-                           </button>
                            <button type="button" class="btn btn-secondary" title="Add To Cart">
                            <i class="fas fa-shopping-cart"></i>
                            </button>
@@ -372,9 +351,6 @@ include('dbconnection.php');
                        <div class="overlay-right">
                            <button type="button" class="btn btn-secondary" title="Quick Shop">
                            <i class="fas fa-eye"></i>
-                           </button>
-                           <button type="button" class="btn btn-secondary" title="Add To Wishlist">
-                           <i class="fas fa-heart"></i>
                            </button>
                            <button type="button" class="btn btn-secondary" title="Add To Cart">
                            <i class="fas fa-shopping-cart"></i>

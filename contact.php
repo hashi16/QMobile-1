@@ -80,7 +80,7 @@ include('contact_script.php');
                     </div>
                 </div>
             </div>
-        </nav>
+        </nav><br>
 
         <!-- Breadcrumb -->
         <div class="container">
@@ -89,34 +89,6 @@ include('contact_script.php');
                     <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
                     <li class="breadcrumb-item active">Contact</li>
                 </ol>
-            </div>
-        </div>
-
-
-        <div class="row container row-content">
-            <!-- Bootstrap card -->
-            <div class="col-12 col-sm-6 offset-3">
-                <div class="card">
-                    <h3 class="card-header bg-warning text-secondary" style="text-align:center">Location Information</h3>
-                    <div class="card-body">
-                        <dl class="row">
-                            <dd class="col-6">No 121, Templers road,</dd>
-                            <dd class="col-6"><i class="fa fa-phone"></i>: +9411 234 5678</dd>
-                            <dd class="col-6">Mount Lavinia, </dd>
-                            <dd class="col-6"><i class="fa fa-fax"></i>: +9411 234 5678</dd>
-                            <dd class="col-6">Sri Lanka.</dd>
-                            <dd class="col-6"><i class="fa fa-envelope"></i>:<a href="mailto:qmobile@gmail.com">qmobile@gmail.com</a></dd>
-                        </dl>
-                        <dl class="row">
-                            <!-- Button -->
-                            <div class="btn-group offset-3" role="group">
-                                <a role="button" class="btn btn-primary" href="tel:+85212345678"><i class="fa fa-phone"></i> Call</a>
-
-                                <a role="button" class="btn btn-success" href="mailto:confusion@food.net"><i class="fa fa-envelope-o"></i> Email</a>
-                            </div>
-                        </dl>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -198,6 +170,39 @@ include('contact_script.php');
                 </div>
             </div>
         </div>
+
+        <!-- Bootstrap card -->
+    <div class="row container row-content">
+        <div class="col-12 col-sm-6 justify-content-center offset-sm-3">
+            <div class="card">
+                <h3 class="card-header bg-warning text-secondary" style="text-align:center">Location Information</h3>
+                <div class="card-body bg-light">
+                    <dl class="row">
+                        <dd class="col-6">No 121, Templers road,</dd>
+                        <dd class="col-6"><i class="fa fa-phone"></i>: +9411 234 5678</dd>
+                        <dd class="col-6">Mount Lavinia, </dd>
+                        <dd class="col-6"><i class="fa fa-fax"></i>: +9411 234 5678</dd>
+                        <dd class="col-6">Sri Lanka.</dd>
+                        <dd class="col-6"><i class="fa fa-envelope"></i>:<a href="mailto:qmobile@gmail.com"> qmobile@gmail.com</a></dd>
+                    </dl>
+                    <dl class="row">
+                        <dd class="col-12">
+                           <div class="w-100">
+                               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.489020141167!2d79.87264041459225!3d6.831818195062575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25adf6260db1d%3A0xaa8e852461115e82!2s121%20Templers%20Rd%2C%20Dehiwala-Mount%20Lavinia!5e0!3m2!1sen!2slk!4v1577971571239!5m2!1sen!2slk" frameborder="0" style="border:0;width:100%;" allowfullscreen=""></iframe>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="row">
+                        <!-- Button -->
+                        <div class="btn-group offset-3 offset-sm-4" role="group">
+                            <a role="button" class="btn btn-primary" href="tel:+94112345678"><i class="fa fa-phone"></i> Call</a>
+                            <a role="button" class="btn btn-success" href="mailto:qmobile@gmail.com"><i class="fa fa-envelope-o"></i> Email</a>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <?php include('footer.php'); ?>
 
