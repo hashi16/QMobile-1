@@ -75,9 +75,8 @@ $sql = "SELECT * FROM user WHERE username ='$n'";
                 <div class="menu-bar">
                     <ul
                     <?php if(isset($_SESSION['user'])): ?>
-                        <li><a href="register.php"><?php echo $_SESSION['user']['username'];?></a></li>
+                        <li><?php echo $_SESSION['user']['username'];?></li>
                         <!-- <li><a href="index.php"> Signout  <i class="fas fa-sign-in-alt fa-dark"></i></a></li> -->
-
                         <small>
              <i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
              <br>
