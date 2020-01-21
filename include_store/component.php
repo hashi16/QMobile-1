@@ -54,15 +54,17 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
         <div class=\"col-md-6\">
           <h5 class=\"pt-2\">$productname</h5>
           <small class=\"text-secondary\">Seller:dailytuition</small>
-           <h5 class=\"pt-2\">$productprice</h5>
+           <h5 class=\"pt-2\">Rs.$productprice</h5>
+
            <button type=\"submit\" name=\"order\" class=\"btn btn-warning\">Order</button>
+           
            <button type=\"submit\" name=\"remove\" class=\"btn btn-danger mx-2\">Remove</button>
         </div>
         <div class=\"col-md-3 py-5\">
            <div>
-          <button type=\"submit\" name=\"\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-minus\"></i> </button>
-           <input type=\"text\" name=\"qty\" value=\"$productqty\" class=\"form-control w-25 d-inline\">
-         <button type=\"submit\" name=\"\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-plus\"></i> </button>
+           <button type=\"submit\" name=\"\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-minus\"></i> </button>
+            <input type=\"text\" name=\"qty\" value=\"1\" class=\"form-control w-25 d-inline\">
+          <button type=\"submit\" name=\"\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-plus\"></i> </button>
         </div>
         </div>
 
@@ -74,5 +76,8 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
   ";
   echo $element;
 }
+
+
+
 
  ?>

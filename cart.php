@@ -14,18 +14,19 @@ if(isset($_POST['remove'])){
  }
 }
 
+if(isset($_POST['order'])){
+  if($_GET['action'] == 'order'){
+    foreach ($_SESSION['cart'] as $key => $value) {
+      if($value["product_id"] == $_GET['id']){
+        // unset($_SESSION['cart']['$key']);
+        echo "<script>alert('Product has been ordered..')</script>";
+        echo "<script>window.location = 'order.php'</script>";
+      }
+    }
+  }
+}
 
-//
-// if (!isLoggedIn()) {
-// $_SESSION['msg'] = "You must log in first";
-// header('location: login.php');
-
-//}
-
-//$link = mysqli_connect("localhost", "root", "", "cabservice");
-// $n=$_SESSION['user']['username'];
-// $sql = "SELECT * FROM user WHERE username ='$n'";
-
+// order();
  ?>
 
 
@@ -114,8 +115,6 @@ if(isset($_POST['remove'])){
 
 
 
-
-
     <!--Cart.php strt checkout-->
     <div class="container-fluid">
       <div class="row px-5">
@@ -135,7 +134,7 @@ if(isset($_POST['remove'])){
                 foreach($product_id as $id){
                   if($row['id'] == $id){
                     cartElement($row['product_image'],$row['product_name'],$row['product_price'],$row['product_qty'],$row['id']);
-                      $total = $total+(int)($row['product_price']);
+                      $total = $total+$row['product_price']*$row['product_qty'];
                   }
                 }
                }
@@ -174,13 +173,13 @@ if(isset($_POST['remove'])){
 
                <div class="col-md-6">
                  <div class="bg-warning">
-                    <h6>Rs <?php echo $total;?></h6>
+                    <h6>Rs <?php echo number_format($total,2);?></h6>
                  </div>
 
                  <h6 class="text-success">FREE</h6>
                  <hr>
                  <div class="bg-danger">
-                   <h6>Rs <?php echo $total; ?></h6>
+                   <h6>Rs <?php echo number_format($total,2); ?></h6>
                  </div>
 
 

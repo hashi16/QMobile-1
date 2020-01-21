@@ -424,6 +424,14 @@ if (isset($_GET['logout'])) {
 }
 }
 
+if(isset($_POST['order'])){
+  order();
+}
+
+function order(){
+  $db;
+}
+
 
 
 
