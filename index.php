@@ -212,17 +212,16 @@ include('include_store\items.php');
    </div>
 
    <!--New Arrival-->
-<div class="col-md-9">
-
-</div>
- <div class="row">
- <?php
-     getproduct();
-    ?>
- </div>
-</div>
-<div class="col-md-4"></div>
-
+    <div class="container">
+        <div class="title-box bg-primary">
+            <h2>Latest Items</h2>
+        </div>
+        <div class="row">
+            <?php
+                getproduct();
+            ?>
+        </div>
+    </div><br>
 
 <?php
 include("footer.php");

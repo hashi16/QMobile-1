@@ -115,7 +115,7 @@ if(isset($_POST['add'])){
    <div class="container">
        <div class="row">
            <ol class="col-12 breadcrumb">
-               <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+               <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
                <li class="breadcrumb-item active">Store</li>
            </ol>
        </div>
@@ -146,37 +146,35 @@ if(isset($_POST['add'])){
            </div>
 
            <div class="col-md-9">
-
-             <?php include('include_store\header.php'); ?>
-               <!--Filter price range-->
-               <!-- <div class="row">
-                   <div class="col-12">
-                       <div class="card card-body bg-light">
-                           <form class="form-inline" method="post" enctype="multipart/form-data">
-                               <label for="">Price Range: &nbsp;</label>
-                               <div class="form-group">
-                                   <label for="">Min (Rs:) &nbsp;</label>
-                                   <input type="text" class="form-control" name="minPrice" pattern="[0-9]*">
-                               </div>
-                               <div class="form-group">
-                                   <label for="">&nbsp; Max (Rs:)  &nbsp;</label>
-                                   <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*"> &nbsp; &nbsp;
-                               </div>
-                               <div class="form-group text-center">
-                                   <input type="submit" value="Sort" name="priceSort" class="btn btn-success">
-                               </div>
-                           </form>
-                       </div><br>
-                   </div>
-               </div> -->
-               <!--Store Products-->
-
-<div class="row">
-<?php
-    getProduct();
-   ?>
-</div>
-<!-- </div> -->
+                <?php include('include_store\header.php'); ?>
+                <!--Filter price range-->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card card-body bg-light">
+                            <form class="form-inline" method="post" enctype="multipart/form-data">
+                                <label for="">Price Range: &nbsp;</label>
+                                <div class="form-group">
+                                    <label for="">Min (Rs:) &nbsp;</label>
+                                    <input type="text" class="form-control" name="minPrice" pattern="[0-9]*">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">&nbsp; Max (Rs:)  &nbsp;</label>
+                                    <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*"> &nbsp; &nbsp;
+                                </div>
+                                <div class="form-group text-center">
+                                    <input type="submit" value="Sort" name="priceSort" class="btn btn-success">
+                                </div>
+                            </form>
+                        </div><br>
+                    </div>
+                </div>
+                <!--Store Products-->
+                <div class="row">
+                <?php
+                    getProduct();
+                ?>
+                </div><br>
+                
                <!--Paginations-->
                <div class="row">
                    <div class="col-md-12">
