@@ -178,17 +178,28 @@ if(isset($_POST['order'])){
                             <!-- <h6>Rs <?php  //echo $total; ?></h6> -->
 
                             <div class="col-md-6">
-                                <div class="bg-warning">
-                                    <h6>Rs <?php echo number_format($total,2);?></h6>
-                                </div>
-
-                                <h6 class="text-success">FREE</h6>
-                                <hr>
-                                <div class="bg-danger">
-                                    <h6>Rs <?php echo number_format($total,2); ?></h6>
-                                </div>
-
-
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <div class="bg-warning">
+                                                <h6>Rs <?php echo number_format($total,2);?></h6>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <h6 class="text-success">FREE</h6>
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="bg-danger">
+                                                <h6>Rs <?php echo number_format($total,2); ?></h6>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
