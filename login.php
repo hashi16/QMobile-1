@@ -13,10 +13,10 @@ include('dbconnection.php')
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
-    <link rel="stylesheet" href="./css/custom.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+     <link rel="stylesheet" href="./css/custom.css">
 
     <title>Customer Login</title>
 </head>
@@ -89,7 +89,7 @@ include('dbconnection.php')
             <div class="col-md-4">
             </div>
 
-            <div id=log class="col-md-4" style="margin-top: 150px">
+            <div id=log class="col-md-4">
             <h1 class="text-center">Login</h1>
                 <form method = "post" action="login.php">
 
@@ -137,7 +137,7 @@ include('dbconnection.php')
             </div>
 
         </div>
-    </div>
+    </div><br>
 
     <!-- Footer -->
     <?php
