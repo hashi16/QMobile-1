@@ -152,7 +152,7 @@ include('dbconnection.php')
             </div>
 
         </div>
-    </div>
+    </div><br>
 
     <!-- Footer -->
     <?php
