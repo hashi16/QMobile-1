@@ -75,10 +75,7 @@ address{
     color: #0f0f0f;
 }
 
-.carousel {
-    background:#512DA8;
-}
-
+/*---------------------Carousel------------------------------*/
 .carousel-item {
     height: 500px;
 }
@@ -87,8 +84,20 @@ address{
     position: absolute;
     top: 0;
     left: 0;
-    min-height: 300px;
+    min-height: 500px;
 }
+
+@media only screen and (max-width: 768px) {
+    .carousel-item {
+        height: 250px;
+    }
+    .carousel-item img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 250px;
+    }
+  }
 
 /*---------------------On Sale------------------------------*/
 .title-box{

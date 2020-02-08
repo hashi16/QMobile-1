@@ -108,12 +108,11 @@ if(isset($_POST['order'])){
             <div class="row">
                 <ol class="col-12 breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+                    <li class="breadcrumb-item"><a href="store.php">Store</a></li>
                     <li class="breadcrumb-item active">Cart</li>
                 </ol>
             </div>
         </div>
-
-
 
         <!--Cart.php strt checkout-->
         <div class="container">
@@ -125,26 +124,26 @@ if(isset($_POST['order'])){
             <div class="row">
                 <div class="col-md-8">
                     <div class="shopping-cart">
-                <?php
-                $total = 0;
-                  if(isset($_SESSION['cart'])){
-                    $product_id= array_column($_SESSION['cart'],'product_id');
-                    $sql = "SELECT * FROM product";
-                    //
-                  $result = mysqli_query($db,$sql);
+                        <?php
+                        $total = 0;
+                        if(isset($_SESSION['cart'])){
+                            $product_id= array_column($_SESSION['cart'],'product_id');
+                            $sql = "SELECT * FROM product";
+                            //
+                        $result = mysqli_query($db,$sql);
 
-                    while ($row = mysqli_fetch_assoc($result)) {
-                      foreach($product_id as $id){
-                        if($row['id'] == $id){
-                          cartElement($row['product_image'],$row['product_name'],$row['product_price'],$row['product_qty'],$row['id']);
-                            $total = $total+$row['product_price']*$row['product_qty'];
+                            while ($row = mysqli_fetch_assoc($result)) {
+                            foreach($product_id as $id){
+                                if($row['id'] == $id){
+                                    cartElement($row['product_image'],$row['product_name'],$row['product_price'],$row['product_qty'],$row['id']);
+                                        $total = $total+$row['product_price']*$row['product_qty'];
+                                }
+                            }
+                            }
+                        }else {
+                            echo "<h5>Cart is Empty</h5>";
                         }
-                      }
-                    }
-                  }else {
-                    echo "<h5>Cart is Empty</h5>";
-                  }
-                ?>
+                        ?>
                     </div>
                 </div>
 
@@ -152,67 +151,60 @@ if(isset($_POST['order'])){
                 <div class="col-sm-4">
                     <div class="row">
                         <div class="col-12">
+                            <div class="card" id="bg-secondary">
+                                <div class="card card-header bg-primary">
+                                    <h3>PRICE DETAILS</h3>
+                                </div>
+                                <div class="bg-light row price-details">
+                                    <div class="col-md-6">
+                                        <?php
+                                            if(isset($_SESSION['cart'])){
+                                            $count = count($_SESSION['cart']);
+                                            echo "<h6><b>Price($count items)</b></h6>";
+                                            }else {
+                                            echo "<h6><b>Price(0 items)<b></h6>";
+                                            }
+                                        ?>
+                                        <h6><b>Delivery Charges</b></h6>
+                                        <hr>
+                                        <h6><b>Amount Payable</b></h6>
+                                    </div>
+                                    <!-- <h6>Rs <?php  //echo $total; ?></h6> -->
 
-                        </div>
-                    </div>
-                    <div class="card" id="bg-secondary">
-                        <div class="card card-header bg-primary">
-                            <h3>PRICE DETAILS</h3>
-                        </div>
-
-                        <div class="bg-light row price-details">
-                            <div class="col-md-6">
-                 <?php
-                 if(isset($_SESSION['cart'])){
-                   $count = count($_SESSION['cart']);
-                   echo "<h6><b>Price($count items)</b></h6>";
-                 }else {
-                   echo "<h6><b>Price(0 items)<b></h6>";
-                 }
-                 ?>
-                                <h6><b>Deleivery Charges</b></h6>
-                                <hr>
-                                <h6><b>Amount Paybale</b></h6>
-
-                            </div>
-                            <!-- <h6>Rs <?php  //echo $total; ?></h6> -->
-
-                            <div class="col-md-6">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <div class="bg-warning">
-                                                <h6>Rs <?php echo number_format($total,2);?></h6>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <h6 class="text-success">FREE</h6>
-                                            <hr>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="bg-danger">
-                                                <h6>Rs <?php echo number_format($total,2); ?></h6>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </table>
+                                    <div class="col-md-6">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <div class="bg-success">
+                                                        <h6>Rs <?php echo number_format($total,2);?></h6>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="text-success">FREE</h6>
+                                                    <hr>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="bg-success">
+                                                        <h6>Rs <?php echo number_format($total,2); ?></h6>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
+        </div><br>
 
         <!-- Footer -->
-  <?php include('footer.php') ?>
+        <?php include('footer.php') ?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
