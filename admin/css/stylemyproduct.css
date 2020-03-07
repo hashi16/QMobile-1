@@ -1,0 +1,120 @@
+.row-header{
+    margin: 0px auto;
+    padding: 0px auto;
+}
+
+.row-content{
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+/*---------------------------product-top-----------------------------*/
+.product-top img{
+    width: 100%;
+}
+.overlay-right{
+    display: block;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    margin-left: 0;
+    width: 70px;
+}
+#remove{
+    background-color: white;
+    color: darkred !important;
+}
+.overlay-right .fas
+{
+    cursor: pointer;
+    background-color: #fff;
+    color: #000;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    padding: 7px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.btn-secondary{
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.product-top:hover .overlay-right
+{
+    opacity: 1;
+    margin-left: 5%;
+    transition: 0.5s;
+}
+/*--------------------------------------------product-bottom-----------------------------------------------*/
+.product-bottom .fas {
+    color: orange;
+    font-size: 10px;
+}
+.product-bottom .far {
+    color: orange;
+    font-size: 10px;
+}
+.product-bottom h4{
+    font-size: 20px;
+    font-weight: bold;
+}
+.product-bottom h5{
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+/*------------------------------------single-product----------------------------------------------------------*/
+.single-product{
+    margin-top: 70px;
+}
+.new-arrival{
+    background: green;
+    width: 50px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.col-md-7 h2
+{
+    color: #555;
+}
+.single-product .fas{
+    color: orange;
+}
+.single-product .price{
+    color: orange;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+.single-product input{
+    border: 1px solid #ccc;
+    font-weight: bold;
+    height: 33px;
+    text-align: center;
+    width: 30px;
+}
+.single-product .btn-secondary{
+    background: blue !important;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    box-shadow: none !important;
+}
+/*---------------product description-------------------------------------*/
+.product-descrption h6{
+    margin-top: 50px;
+    color: orange;
+}
+.product-descrption p{
+    margin-top: 30px;
+    
+}
+.product-descrption hr{
+    margin-bottom: 50px;
+}
+
