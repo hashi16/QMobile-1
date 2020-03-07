@@ -1,3 +1,7 @@
+<?php
+include('dbconnection.php')
+//require_once('dbconnection.php') ;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,21 +78,13 @@
 
     <!----Card---->
     <div class="card card-body">
-        <form action="addproduct.php" method="post" enctype="multipart/form-data">
+        <form action="dbconnection.php" method="post" enctype="multipart/form-data">
             <h4 class="card-header">What You're Selling</h4><br>
             <div class="card-text">
                 <div class="form-group row">
                     <label for="productName" class="col-sm-2 col-form-label">Product Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="productName">
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="productID" class="col-sm-2 col-form-label">Product ID</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="productID">
+                        <input type="text" class="form-control" name="productName" id="productName">
                     </div>
                 </div>
             </div>
@@ -96,7 +92,7 @@
                 <div class="form-group row">
                     <label for="manufacturer" class="col-sm-2 col-form-label">Manufacturer</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="manufacturer">
+                        <input type="text" class="form-control" name="manufacturer" id="manufacturer">
                     </div>
                 </div>
             </div>
@@ -104,23 +100,23 @@
                 <div class="form-group row">
                     <label for="category" class="col-sm-2 col-form-label">Category</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="category">
+                        <input type="text" class="form-control" name="category" id="category">
                     </div>
                 </div>
             </div>
             <div class="card-text">
                 <div class="form-group row">
-                    <label for="price" class="col-sm-2 col-form-label">Actual Price</label>
+                    <label for="actualprice" class="col-sm-2 col-form-label">Actual Price</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="price">
+                        <input type="number" class="form-control" name="actualprice" id="actualprice">
                     </div>
                 </div>
             </div>
             <div class="card-text">
                 <div class="form-group row">
-                    <label for="price" class="col-sm-2 col-form-label">Selling Price</label>
+                    <label for="sellingprice" class="col-sm-2 col-form-label">Selling Price</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="price">
+                        <input type="number" class="form-control" name="sellingprice" id="sellingprice">
                     </div>
                 </div>
             </div>
@@ -128,7 +124,7 @@
                 <div class="form-group row">
                     <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" id="quantity">
+                        <input type="number" class="form-control" name="quantity" id="quantity">
                     </div>
                 </div>
             </div>
@@ -136,7 +132,7 @@
                 <div class="form-group row">
                     <label for="description" class="col-sm-2 col-form-label">Description</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" id="description" rows="4"></textarea>
+                        <textarea class="form-control" name="description" id="description" rows="4"></textarea>
                     </div>
                 </div>
             </div>
@@ -145,13 +141,12 @@
                     <label for="importimg" class="col-sm-2 col-form-label">Import Image</label>
                     <div class="col-sm-10">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-                            <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                            <input type="file" id="image" name="image">
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-primary ml-auto">Submit</button>
+            <input type="submit" class="btn btn-primary ml-auto" id="upload" name="upload" value="Submit">
         </form>
     </div>
     
