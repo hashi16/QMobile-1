@@ -1,5 +1,5 @@
 <?php
-function store($productname,$actualprice,$productprice,$productimg,$productqty,$productid){
+function store($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory){
  $element ="
 
      <div class=\"col-6 col-md-3\">
@@ -27,6 +27,7 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
             <i class=\"fas fa-star\"></i>
             <i class=\"fas fa-star-half-alt\"></i>
             <h4>$productname</h4>
+            <h5>$productcatogory</h5>
            <small><s class=\"text-secondary\">RS.$actualprice</s></small>
             <h5>Rs.$productprice</h5>
         </div>
