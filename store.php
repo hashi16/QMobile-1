@@ -96,7 +96,7 @@
 
                             <?php }else{ ?>
                             <li><a href="register.php">Register <i class="fas fa-user-plus fa-dark"></i></a></li>
-                            <li><a href="login.php">Login <i class="fas fa-user-plus fa-dark"></i></a></li>
+                            <li><a href="login.php">Login <i class="fas fa-sign-in-alt fa-dark"></i></a></li>
                             <?php } ?>
 
                         </ul>
