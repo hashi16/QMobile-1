@@ -10,7 +10,7 @@ if(isset($_POST['send'])){
   $feedback = $_POST['feedback'];
 
 
-  $mailTo = "mahniroshan16@gmail.com";
+  $mailTo = "deelakajagoda@gmail.com";
   $headers = "MIME-Version: 1.0" ;        //"MIME-Version: 1.0" . "\r\n"
   $txt =  "You have received an e-mail from :  "  .$fname.
      "\n\n Telephone number is :  ".$telnum . "\n\n E-mail Address From :" .$mailfrom. "\n\n feedback is :" .$feedback;

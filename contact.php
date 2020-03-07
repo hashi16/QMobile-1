@@ -43,15 +43,12 @@ include('contact_script.php');
                         <li class="nav-item">
                             <a class="nav-link" href="store.php"><span class="fas fa-warehouse fa-lg"></span> Store</a>
                         </li>
-
-
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user fa-lg"></span> My Account</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="order.php">My Orders</a>
-                                <a class="dropdown-item" href="cart.php">Cart <span class="fa fa-shopping-cart fa-lg"></span></a>
-                                <a class="dropdown-item" href="userprofile.php">Profile <span class="fa fa-user fa-lg"></span></a>
-
+                                <a class="dropdown-item" href="./order.php">My Orders <span class="fas fa-shopping-bag fa-lg"></span></a>
+                                <a class="dropdown-item" href="./cart.php">Cart <span class="fa fa-shopping-cart fa-lg"></span></a>
+                                <a class="dropdown-item" href="./userprofile.php">Profile <span class="fa fa-user fa-lg"></span></a>
                             </div>
                         </li>
                     </ul>

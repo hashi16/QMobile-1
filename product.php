@@ -21,7 +21,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a class="navbar-brand active" href="#"><img src="./Resourses/8LWpMxMS_400x400.jpg" height="40" width="40" alt="QMobile"> QMobile</a>
+            <a class="navbar-brand active" href="./index.php"><img src="./Resourses/8LWpMxMS_400x400.jpg" height="40" width="40" alt="QMobile"> QMobile</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,7 +34,7 @@
                         <a class="nav-link" href="./about.php"><span class="fa fa-info fa-lg"></span> About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./contactus.php"><span class="fa fa-address-card fa-lg"></span> Contact Us</a>
+                        <a class="nav-link" href="./contact.php"><span class="fa fa-address-card fa-lg"></span> Contact Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./store.php"><span class="fas fa-warehouse fa-lg"></span> Store</a>
@@ -44,7 +44,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="./order.php">My Orders <span class="fas fa-shopping-bag fa-lg"></span></a>
                             <a class="dropdown-item" href="./cart.php">Cart <span class="fa fa-shopping-cart fa-lg"></span></a>
-                            <a class="dropdown-item" href="./user.php">Profile <span class="fa fa-user fa-lg"></span></a>
+                            <a class="dropdown-item" href="./userprofile.php">Profile <span class="fa fa-user fa-lg"></span></a>
                         </div>
                     </li>
                 </ul>
@@ -88,8 +88,7 @@
                 </div>
                 <div class="col-md-7">
                     <p class="new-arrival text-center">New</p>
-                    <h2>Samsung A10</h2>
-                    <p>Product Code: IRSC2019</p>
+                    <h2>Samsung Galaxy M20</h2>
 
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -97,7 +96,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
 
-                    <p class="price">Rs.7300.00</p>
+                    <p class="price">Rs.45000.00</p>
                     <p><b>Availability : </b>In Stock</p>
                     <p><b>Condition : </b>New</p>
                     <p><b>Brand : </b> Samsung</p>
@@ -128,9 +127,9 @@
                 <div class="col-4 offset-1 col-sm-3">
                     <h5>Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="./index.php">Home</a></li>
                         <li><a href="./about.php">About</a></li>
-                        <li><a href="./contactus.php">Contact</a></li>
+                        <li><a href="./contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <!-- Address -->
