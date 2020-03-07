@@ -110,7 +110,15 @@
             </div>
             <div class="card-text">
                 <div class="form-group row">
-                    <label for="price" class="col-sm-2 col-form-label">Price</label>
+                    <label for="price" class="col-sm-2 col-form-label">Actual Price</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" id="price">
+                    </div>
+                </div>
+            </div>
+            <div class="card-text">
+                <div class="form-group row">
+                    <label for="price" class="col-sm-2 col-form-label">Selling Price</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" id="price">
                     </div>

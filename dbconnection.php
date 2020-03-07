@@ -417,7 +417,7 @@ if (isset($_GET['logout'])) {
     //   return $result;
 
       while($row = mysqli_fetch_assoc($result)){
-        store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category']);
+        store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
 
 
 

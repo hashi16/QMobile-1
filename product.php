@@ -112,8 +112,8 @@
     <section class="product-descrption">
     <div class="container">
         <h6>Product Description</h6>
-        <p>Samsung Galaxy A10 is powered by an octa-core Samsung Exynos 7884 processor. It comes with 2GB of RAM. ...
-            The Samsung Galaxy A10 runs One UI based on Android Pie and packs 32GB of inbuilt storage that can be expanded
+        <p>Samsung Galaxy M20 is powered by an octa-core Samsung Exynos 7884 processor. It comes with 2GB of RAM. ...
+            The Samsung Galaxy M20 runs One UI based on Android Pie and packs 32GB of inbuilt storage that can be expanded
             via microSD card (up to 512GB). It was launched in Red and Blue Black colours
         </p>
         <hr>

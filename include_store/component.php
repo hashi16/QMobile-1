@@ -1,5 +1,5 @@
 <?php
-function store($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory){
+function store($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
  $element ="
 
      <div class=\"col-6 col-md-3\">
@@ -27,6 +27,7 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
             <i class=\"fas fa-star\"></i>
             <i class=\"fas fa-star-half-alt\"></i>
             <h4>$productname</h4>
+            <h5>$manufacturer</h5>
             <h5>$productcatogory</h5>
            <small><s class=\"text-secondary\">RS.$actualprice</s></small>
             <h5>Rs.$productprice</h5>
@@ -42,7 +43,7 @@ echo $element;
 
 
 
-function cartElement($productimg, $productname,$productprice,$productqty,$productid){
+function cartElement($productimg, $productname,$productprice,$productqty,$productid,$manufacturer){
   $element="
 <form class=\"cart-items\" action=\"cart.php?action=remove&id=$productid\" method=\"post\">
     <div class=\"border rounded\">
