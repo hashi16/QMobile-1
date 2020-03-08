@@ -57,7 +57,6 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
 
            <button type=\"submit\" name=\"order\" class=\"btn btn-success\">Order</button>
            
-
            <button type=\"submit\" name=\"remove\" class=\"btn btn-danger mx-2\">Remove</button>
         </div>
         <div class=\"col-md-3 py-5\">
@@ -68,7 +67,6 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
         </div>
         </div>
 
-
        </div>
     </div>
 </form>
@@ -76,8 +74,4 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
   ";
   echo $element;
 }
-
-
-
-
  ?>

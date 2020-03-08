@@ -407,6 +407,7 @@ if (isset($_GET['logout'])) {
 
      //store.php
 
+  //get products from database
   function getProduct(){
     global $db;
     $sql = "SELECT * FROM product";
@@ -418,11 +419,8 @@ if (isset($_GET['logout'])) {
 
       while($row = mysqli_fetch_assoc($result)){
         store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
-
-
-
-}
-}
+  }
+  }
 
 // if(isset($_POST['order'])){
 //   order();

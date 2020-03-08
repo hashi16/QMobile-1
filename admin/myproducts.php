@@ -1,3 +1,8 @@
+<?php
+    include('component.php');
+    include('dbconnection.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,6 +125,12 @@
             </div>
             <!--Store Products-->
             <div class="row">
+                <?php
+                    getProduct();
+                ?>
+            </div><br>
+
+            <!--<div class="row">
                 <div class="col-6 col-md-3">
                     <div class="product-top">
                         <img src="./Resourse/product/pr1.jpg">
@@ -298,7 +309,7 @@
                         <h5>Rs.2700.00</h5>
                     </div>
                 </div>               
-            </div>
+            </div>-->
             <!--Paginations-->
             <div class="row">
                 <div class="col-md-12">
