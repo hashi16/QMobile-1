@@ -43,7 +43,7 @@ echo $element;
 
 
 
-function cartElement($productimg, $productname,$productprice,$productqty,$productid,$manufacturer){
+function cartElement($productimg, $productname,$productprice,$productqty,$productid){
   $element="
 <form class=\"cart-items\" action=\"cart.php?action=remove&id=$productid\" method=\"post\">
     <div class=\"border rounded\">
