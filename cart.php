@@ -176,7 +176,7 @@ if(isset($_POST['order'])){
                                             <tr>
                                                 <td>
                                                     <div class="bg-success">
-                                                        <h6>Rs <?php echo number_format($total,2);?></h6>
+                                                        <h6>Rs <?php echo number_format($total/100,2);?></h6>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -189,7 +189,7 @@ if(isset($_POST['order'])){
                                             <tr>
                                                 <td>
                                                     <div class="bg-success">
-                                                        <h6>Rs <?php echo number_format($total,2); ?></h6>
+                                                        <h6>Rs <?php echo number_format($total/100,2); ?></h6>
                                                     </div>
                                                 </td>
                                             </tr>
