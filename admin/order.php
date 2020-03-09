@@ -1,3 +1,7 @@
+<?php
+    include('dbconnection.php');
+    $db = mysqli_connect('localhost','root','','registeruser');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,61 +80,16 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col"><input type="checkbox"></th>
-                <th scope="col"></th>
-                <th scope="col">Document</th>
-                <th scope="col">Order No</th>
+                <th scope="col">Order ID</th>
                 <th scope="col">Order Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Order description</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th><input type="checkbox"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th><input type="checkbox"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th><input type="checkbox"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-      
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
-              <th scope="col">Retail Price</th>
-              <th scope="col">Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th></th>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th></th>
-                <td></td>
-                <td></td>
-            </tr>
+            <?php
+                getOrderDetails();
+            ?>
         </tbody>
     </table>
 
