@@ -1,3 +1,7 @@
+<?php
+    include('dbconnection.php');
+    $db = mysqli_connect('localhost','root','','registeruser');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,30 +77,28 @@
     </div><br>
     
     <!----Table--->
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Order Number</th>
-                <th scope="col">Item</th>
-                <th scope="col">Product Feedback</th>
-                <th scope="col">Reply</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="row row-content">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Contact No.</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Feedback</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            getFeedbackDetails();
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
     
 <!---javaScript cdn----->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
