@@ -84,7 +84,7 @@ include('dbconnection.php')
                 <div class="form-group row">
                     <label for="productName" class="col-sm-2 col-form-label">Product Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="productName" id="productName">
+                        <input type="text" class="form-control" name="productName" id="productName" required>
                     </div>
                 </div>
             </div>
@@ -92,7 +92,7 @@ include('dbconnection.php')
                 <div class="form-group row">
                     <label for="manufacturer" class="col-sm-2 col-form-label">Manufacturer</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="manufacturer" id="manufacturer">
+                        <input type="text" class="form-control" name="manufacturer" id="manufacturer" required>
                     </div>
                 </div>
             </div>
@@ -100,7 +100,7 @@ include('dbconnection.php')
                 <div class="form-group row">
                     <label for="category" class="col-sm-2 col-form-label">Category</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="category" id="category">
+                        <input type="text" class="form-control" name="category" id="category" required>
                     </div>
                 </div>
             </div>
@@ -116,7 +116,7 @@ include('dbconnection.php')
                 <div class="form-group row">
                     <label for="sellingprice" class="col-sm-2 col-form-label">Selling Price</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" name="sellingprice" id="sellingprice">
+                        <input type="number" class="form-control" name="sellingprice" id="sellingprice" required>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@ include('dbconnection.php')
                 <div class="form-group row">
                     <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" name="quantity" id="quantity">
+                        <input type="number" class="form-control" name="quantity" id="quantity" required>
                     </div>
                 </div>
             </div>
