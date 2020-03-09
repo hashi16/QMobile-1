@@ -1,7 +1,7 @@
 <?php
 include('dbconnection.php');
-include('include_store\component.php');
-//include('include_store\items.php');
+//include('include_store\component.php');
+include('include_store\items.php');
 
 // if(isset($_POST['add'])){
 //   //print_r($_POST['product_id']);
@@ -215,7 +215,7 @@ include('include_store\component.php');
             </div>
             <div class="row">
                 <?php
-                    getProduct();
+                    getProductIndex();
                 ?>
             </div>
         </div><br>

@@ -21,11 +21,6 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
             </div>
         </div>
         <div class=\"product-bottom text-center\">
-            <i class=\"fas fa-star\"></i>
-            <i class=\"fas fa-star\"></i>
-            <i class=\"fas fa-star\"></i>
-            <i class=\"fas fa-star\"></i>
-            <i class=\"fas fa-star-half-alt\"></i>
             <h4>$productname</h4>
             <h5>$manufacturer</h5>
             <h5>$productcatogory</h5>

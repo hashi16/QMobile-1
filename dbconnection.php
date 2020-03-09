@@ -407,10 +407,26 @@ if (isset($_GET['logout'])) {
 
      //store.php
 
-  //get products from database
+  //get products from database to store page
   function getProduct(){
     global $db;
     $sql = "SELECT * FROM product";
+
+    $result = mysqli_query($db,$sql);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($result)){
+        store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get products from database to home page
+  function getProductIndex(){
+    global $db;
+    //$sql = "SELECT * FROM product";
+    $sql = "SELECT * FROM (SELECT * FROM product ORDER BY id DESC LIMIT 8)Var1 ORDER BY id DESC";
 
     $result = mysqli_query($db,$sql);
 
