@@ -1,10 +1,13 @@
 <?php
+
+$db = mysqli_connect('localhost','root','','registeruser');
+
 function store($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
  $element ="
 
      <div class=\"col-6 col-md-3\">
         <div class=\"product-top\">
-        <form class =\"\" action=\"store.php\" method=\"post\">
+        <form class =\"\" action=\"myproduct.php\" method=\"post\">
           <div class=\"card shadow\">
             <div>
               <img src=\"$productimg\">
@@ -14,7 +17,7 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
                 <button type=\"button\" class=\"btn btn-secondary\" title=\"Quick Shop\">
                     <a href=\"product.php\"><i class=\"fas fa-eye\"></i></a>
                 </button>
-                <button type=\"button\" class=\"btn btn-secondary\" title=\"Remove Item\" id=\"remove\">
+                <button onclick='redirect($productid)' type='button' class=\"btn btn-secondary\" title=\"Remove Item\" id=\"remove\" name=\"remove\">
                     <input type='hidden' name='product_id' value='$productid'>
                     <i class=\"fas fa-minus-circle\"></i>
                 </button>
@@ -41,3 +44,8 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
 echo $element;
 }
  ?>
+ <script>
+  function redirect(id){
+    window.location.href = "dbconnection.php?id="+id;
+  }
+ </script>

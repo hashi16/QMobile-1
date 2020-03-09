@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2020 at 04:10 PM
+-- Generation Time: Mar 09, 2020 at 09:20 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -103,24 +103,24 @@ CREATE TABLE IF NOT EXISTS `product` (
   `actualprice` varchar(255) NOT NULL,
   `product_price` varchar(255) NOT NULL,
   `product_qty` int(255) NOT NULL,
-  `product_image` blob NOT NULL,
+  `product_image` varchar(255) NOT NULL,
   `description` varchar(5000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `product_name`, `manufacturer`, `product_category`, `actualprice`, `product_price`, `product_qty`, `product_image`, `description`) VALUES
-(1, 'Samsung Galaxy M20', 'Samsung', 'Mobile Phone', '50000.00', '45000.00', 1, 0x5265736f75727365732f70726f647563742f7072312e6a7067, ''),
-(2, 'Huawei P30', 'Huawei', 'Mobile Phone', '34000.00', '30000.00', 1, 0x5265736f75727365732f70726f647563742f7072322e6a7067, ''),
-(3, 'Oppo F15', 'Oppo', 'Mobile Phone', '45000.00', '40000.00', 1, 0x5265736f75727365732f70726f647563742f7072332e6a7067, ''),
-(4, 'Nokia 6.1 Plus (Nokia X6)', 'Nokia', 'Mobile Phone', '24000.00', '22000.00', 1, 0x5265736f75727365732f70726f647563742f7072342e6a7067, ''),
-(5, 'Apple Iphone Charger', 'Apple', 'Charger', '4000.00', '3000.00', 1, 0x5265736f75727365732f70726f647563742f7072352e6a7067, ''),
-(6, 'Pinang Handfree', 'Pinang', 'Handfree', '600.00', '550.00', 1, 0x5265736f75727365732f70726f647563742f7072362e6a7067, ''),
-(7, 'Samsung Wireless Charger', 'Samsung', 'Charger', '1000.00', '950.00', 1, 0x5265736f75727365732f70726f647563742f7072372e6a7067, ''),
-(8, 'Apple Airpod', 'Apple', 'Handfree', '4500.00', '4000.00', 1, 0x5265736f75727365732f70726f647563742f7072382e6a7067, '');
+(1, 'Samsung Galaxy M20', 'Samsung', 'Mobile Phone', '50000.00', '45000.00', 1, 'Resourses/product/pr1.jpg', ''),
+(2, 'Huawei P30', 'Huawei', 'Mobile Phone', '34000.00', '30000.00', 1, 'Resourses/product/pr2.jpg', ''),
+(3, 'Oppo F15', 'Oppo', 'Mobile Phone', '45000.00', '40000.00', 1, 'Resourses/product/pr3.jpg', ''),
+(4, 'Nokia 6.1 Plus (Nokia X6)', 'Nokia', 'Mobile Phone', '24000.00', '22000.00', 1, 'Resourses/product/pr4.jpg', ''),
+(5, 'Apple Iphone Charger', 'Apple', 'Charger', '4000.00', '3000.00', 1, 'Resourses/product/pr5.jpg', ''),
+(6, 'Pinang Handfree', 'Pinang', 'Handfree', '600.00', '550.00', 1, 'Resourses/product/pr6.jpg', ''),
+(7, 'Samsung Wireless Charger', 'Samsung', 'Charger', '1000.00', '950.00', 1, 'Resourses/product/pr7.jpg', ''),
+(8, 'Apple Airpod', 'Apple', 'Handfree', '4500.00', '4000.00', 1, 'Resourses/product/pr8.jpg', '');
 
 -- --------------------------------------------------------
 
