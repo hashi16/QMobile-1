@@ -4,15 +4,10 @@ $db = mysqli_connect('localhost','root','','registeruser');
 
 function store($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
  $element ="
-
-     <div class=\"col-6 col-md-3\">
-        <div class=\"product-top\">
+<div class=\"col-6 col-md-3\">
+    <div class=\"product-top\">
         <form class =\"\" action=\"myproduct.php\" method=\"post\">
-          <div class=\"card shadow\">
-            <div>
-              <img src=\"$productimg\">
-            </div>
-          <div class=\"card-body\">
+            <img src=\"$productimg\">
             <div class=\"overlay-right\">
                 <button type=\"button\" class=\"btn btn-secondary\" title=\"Quick Shop\">
                     <a href=\"product.php\"><i class=\"fas fa-eye\"></i></a>
@@ -22,19 +17,16 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
                     <i class=\"fas fa-minus-circle\"></i>
                 </button>
             </div>
-        </div>
-        <div class=\"product-bottom text-center\">
-            <h4>$productname</h4>
-            <h5>$manufacturer</h5>
-            <h5>$productcatogory</h5>
-           <small><s class=\"text-secondary\">RS.$actualprice</s></small>
-            <h5>Rs.$productprice</h5>
-        </div>
+            <div class=\"product-bottom text-center\">
+                <h4>$productname</h4>
+                <h5>$manufacturer</h5>
+                <h5>$productcatogory</h5>
+                <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                <h5>Rs.$productprice</h5>
+            </div>
+        </form>
     </div>
-    </form>
- </div>
 </div>
-
 ";
 echo $element;
 }

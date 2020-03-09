@@ -1,37 +1,29 @@
 <?php
 function store($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
  $element ="
-
-     <div class=\"col-6 col-md-3\">
-        <div class=\"product-top\">
+<div class=\"col-6 col-md-3\">
+    <div class=\"product-top\">
         <form class =\"\" action=\"store.php\" method=\"post\">
-          <div class=\"card shadow\">
-            <div>
-              <img src=\"$productimg\">
-            </div>
-          <div class=\"card-body\">
+            <img src=\"$productimg\">
             <div class=\"overlay-right\">
                 <button type=\"button\" class=\"btn btn-warning\" title=\"Quick Shop\">
                     <a href=\"product.php\"><i class=\"fas fa-eye\"></i></a>
                 </button>
                 <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
-                 <input type='hidden' name='product_id' value='$productid'>
-                <i class=\"fas fa-shopping-cart\"></i>
+                    <input type='hidden' name='product_id' value='$productid'>
+                    <i class=\"fas fa-shopping-cart\"></i>
                 </button>
             </div>
-        </div>
-        <div class=\"product-bottom text-center\">
-            <h4>$productname</h4>
-            <h5>$manufacturer</h5>
-            <h5>$productcatogory</h5>
-           <small><s class=\"text-secondary\">RS.$actualprice</s></small>
-            <h5>Rs.$productprice</h5>
-        </div>
+            <div class=\"product-bottom text-center\">
+                <h4>$productname</h4>
+                <h5>$manufacturer</h5>
+                <h5>$productcatogory</h5>
+                <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                <h5>Rs.$productprice</h5>
+            </div>
+        </form>
     </div>
-    </form>
- </div>
 </div>
-
 ";
 echo $element;
 }
