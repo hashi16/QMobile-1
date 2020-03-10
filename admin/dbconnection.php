@@ -1,7 +1,7 @@
 <?php
     //session_start();
     $db = mysqli_connect('localhost','root','','registeruser');
-    $eid = "";
+
 
     //add products to the database
     if(isset($_POST['upload'])){
@@ -31,11 +31,10 @@
     function editProductDetails(){
         if(isset($_GET['eid'])){
             global $db;
-            $eid = $_GET['eid'];
-            $editproductdetail= "SELECT * FROM product where id='$eid'";
+            $editproductdetail= "SELECT * FROM product where id='$_GET[eid]'";
             $editproductdetail_result = mysqli_query($db,$editproductdetail);
             while($row = mysqli_fetch_assoc($editproductdetail_result)){
-                editSingleItem($row['id'],$row['product_name'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['product_category'],$row['manufacturer'],$row['description'],$row['actualprice']);
+                editSingleItem($row['product_name'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['product_category'],$row['manufacturer'],$row['description'],$row['actualprice']);
             }
         }
     }
@@ -51,7 +50,6 @@
         $quantityEdit=$_POST['quantityEdit'];
         $imageEdit=addslashes(file_get_contents($_FILES["imageEdit"]["tmp_name"]));
         $descriptionEdit=$_POST['descriptionEdit'];
-        $id1 = $_POST['idnum'];
 
         $queryedit = "UPDATE product SET manufacturer = '$manufacturerEdit', product_category = '$categoryEdit', actualprice = '$actualpriceEdit', product_price = '$sellingpriceEdit', product_qty = '$quantityEdit', product_image = '$imageEdit', description = '$descriptionEdit' WHERE product_name = '$productnameEdit'";
         $queryedit_run = mysqli_query($db,$queryedit);
