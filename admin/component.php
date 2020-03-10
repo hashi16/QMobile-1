@@ -78,7 +78,7 @@ function editSingleItem($productname,$sellingprice,$productimage,$productqty,$pr
                     <div class='form-group row'>
                         <label for='productName' class='col-sm-2 col-form-label'>Product Name</label>
                         <div class='col-sm-10'>
-                            <input type='text' class='form-control' name='productNameEdit' id='productNameEdit' placeholder='$productname' required>
+                            <input type='text' class='form-control' name='productNameEdit' id='productNameEdit' value='$productname' required>
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ function editSingleItem($productname,$sellingprice,$productimage,$productqty,$pr
                     <div class='form-group row'>
                         <label for='manufacturer' class='col-sm-2 col-form-label'>Manufacturer</label>
                         <div class='col-sm-10'>
-                            <input type='text' class='form-control' name='manufacturerEdit' id='manufacturerEdit' placeholder='$manufacturer' required>
+                            <input type='text' class='form-control' name='manufacturerEdit' id='manufacturerEdit' value='$manufacturer' required>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ function editSingleItem($productname,$sellingprice,$productimage,$productqty,$pr
                     <div class='form-group row'>
                         <label for='category' class='col-sm-2 col-form-label'>Category</label>
                         <div class='col-sm-10'>
-                            <input type='text' class='form-control' name='categoryEdit' id='categoryEdit' placeholder='$productcategory' required>
+                            <input type='text' class='form-control' name='categoryEdit' id='categoryEdit' value='$productcategory' required>
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@ function editSingleItem($productname,$sellingprice,$productimage,$productqty,$pr
                     <div class='form-group row'>
                         <label for='actualprice' class='col-sm-2 col-form-label'>Actual Price</label>
                         <div class='col-sm-10'>
-                            <input type='number' class='form-control' name='actualpriceEdit' id='actualpriceEdit' placeholder='$actualprice'>
+                            <input type='number' class='form-control' name='actualpriceEdit' id='actualpriceEdit' value='$actualprice'>
                         </div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@ function editSingleItem($productname,$sellingprice,$productimage,$productqty,$pr
                     <div class='form-group row'>
                         <label for='sellingprice' class='col-sm-2 col-form-label'>Selling Price</label>
                         <div class='col-sm-10'>
-                            <input type='number' class='form-control' name='sellingpriceEdit' id='sellingpriceEdit' placeholder='$sellingprice' required>
+                            <input type='number' class='form-control' name='sellingpriceEdit' id='sellingpriceEdit' value='$sellingprice' required>
                         </div>
                     </div>
                 </div>
@@ -118,7 +118,7 @@ function editSingleItem($productname,$sellingprice,$productimage,$productqty,$pr
                     <div class='form-group row'>
                         <label for='quantity' class='col-sm-2 col-form-label'>Quantity</label>
                         <div class='col-sm-10'>
-                            <input type='number' class='form-control' name='quantityEdit' id='quantityEdit' placeholder='$productqty' required>
+                            <input type='number' class='form-control' name='quantityEdit' id='quantityEdit' value='$productqty' required>
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@ function editSingleItem($productname,$sellingprice,$productimage,$productqty,$pr
                         <label for='importimg' class='col-sm-2 col-form-label'>Import Image</label>
                         <div class='col-sm-10'>
                             <div class='custom-file'>
-                                <input type='file' id='imageEdit' name='imageEdit' placeholder='$productimage'>
+                                <input type='file' id='imageEdit' name='imageEdit' value='$productimage'>
                             </div>
                         </div>
                     </div>

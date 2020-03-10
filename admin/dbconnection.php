@@ -1,7 +1,7 @@
 <?php
     //session_start();
     $db = mysqli_connect('localhost','root','','registeruser');
-
+    $eid = "";
 
     //add products to the database
     if(isset($_POST['upload'])){
@@ -27,28 +27,43 @@
     }
 
 
+    //edit product details
+    function editProductDetails(){
+        if(isset($_GET['eid'])){
+            global $db;
+            $eid = $_GET['eid'];
+            $editproductdetail= "SELECT * FROM product where id='$eid'";
+            $editproductdetail_result = mysqli_query($db,$editproductdetail);
+            while($row = mysqli_fetch_assoc($editproductdetail_result)){
+                editSingleItem($row['id'],$row['product_name'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['product_category'],$row['manufacturer'],$row['description'],$row['actualprice']);
+            }
+        }
+    }
+
+
     //edit products of the database
-    // if(isset($_POST['editproductitem'])){
-    //     $productnameEdit=$_POST['productNameEdit'];
-    //     $manufacturerEdit=$_POST['manufacturerEdit'];
-    //     $categoryEdit=$_POST['categoryEdit'];
-    //     $actualpriceEdit=$_POST['actualpriceEdit'];
-    //     $sellingpriceEdit=$_POST['sellingpriceEdit'];
-    //     $quantityEdit=$_POST['quantityEdit'];
-    //     $imageEdit=addslashes(file_get_contents($_FILES["imageEdit"]["tmp_name"]));
-    //     $descriptionEdit=$_POST['descriptionEdit'];
+    if(isset($_POST['editproductitem'])){
+        $productnameEdit=$_POST['productNameEdit'];
+        $manufacturerEdit=$_POST['manufacturerEdit'];
+        $categoryEdit=$_POST['categoryEdit'];
+        $actualpriceEdit=$_POST['actualpriceEdit'];
+        $sellingpriceEdit=$_POST['sellingpriceEdit'];
+        $quantityEdit=$_POST['quantityEdit'];
+        $imageEdit=addslashes(file_get_contents($_FILES["imageEdit"]["tmp_name"]));
+        $descriptionEdit=$_POST['descriptionEdit'];
+        $id1 = $_POST['idnum'];
 
-    //     $queryedit = "UPDATE product SET id='$_GET[eid]', product_name = $productnameEdit, manufacturer = $manufacturerEdit, product_category = $categoryEdit, actualprice = $actualpriceEdit, product_price = $sellingpriceEdit, product_qty = $quantityEdit, product_image = $imageEdit, description = $descriptionEdit WHERE id='$_GET[eid]'";
-    //     $queryedit_run = mysqli_query($db,$queryedit);
+        $queryedit = "UPDATE product SET manufacturer = '$manufacturerEdit', product_category = '$categoryEdit', actualprice = '$actualpriceEdit', product_price = '$sellingpriceEdit', product_qty = '$quantityEdit', product_image = '$imageEdit', description = '$descriptionEdit' WHERE product_name = '$productnameEdit'";
+        $queryedit_run = mysqli_query($db,$queryedit);
 
-    //     if($queryedit_run !=null){
-    //         header("refresh:1;url=myproducts.php");
-    //         echo '<script type="text/javascript"> alert("Product successfully edited!") </script>';
-    //     }else{
-    //         header("refresh:1;url=myproducts.php");
-    //         echo '<script type="text/javascript"> alert("Product failed to edit!") </script>';
-    //     }
-    // }
+        if($queryedit_run !=null){
+            header("refresh:1;url=myproducts.php");
+            echo '<script type="text/javascript"> alert("Product successfully edited!") </script>';
+        }else{
+            header("refresh:1;url=myproducts.php");
+            echo '<script type="text/javascript"> alert("Product failed to edit!") </script>';
+        }
+    }
 
 
     //get products from database
@@ -106,18 +121,6 @@
             echo "<td>$status</td>";
             echo "<td>$orderName</td>";
         echo "</tr>";
-    }
-
-    //edit product details
-    function editProductDetails(){
-        if(isset($_GET['eid'])){
-            global $db;
-            $editproductdetail= "SELECT * FROM product where id='$_GET[eid]'";
-            $editproductdetail_result = mysqli_query($db,$editproductdetail);
-            while($row = mysqli_fetch_assoc($editproductdetail_result)){
-                editSingleItem($row['product_name'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['product_category'],$row['manufacturer'],$row['description'],$row['actualprice']);
-            }
-        }
     }
 
     
