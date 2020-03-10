@@ -17,7 +17,7 @@
     <!---------navbar-------->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a href="./index.php" class="navbar-brand">&nbsp;&nbsp;
-            <img src="./Resourse/8LWpMxMS_400x400.jpg" height="40" width="40" alt="QMobile"> QMobile
+            <img src="./Resourses/8LWpMxMS_400x400.jpg" height="40" width="40" alt="QMobile"> QMobile
         </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
             <span class="navbar-toggler-icon"></span>
