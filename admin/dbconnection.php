@@ -27,6 +27,30 @@
     }
 
 
+    //edit products of the database
+    // if(isset($_POST['editproductitem'])){
+    //     $productnameEdit=$_POST['productNameEdit'];
+    //     $manufacturerEdit=$_POST['manufacturerEdit'];
+    //     $categoryEdit=$_POST['categoryEdit'];
+    //     $actualpriceEdit=$_POST['actualpriceEdit'];
+    //     $sellingpriceEdit=$_POST['sellingpriceEdit'];
+    //     $quantityEdit=$_POST['quantityEdit'];
+    //     $imageEdit=addslashes(file_get_contents($_FILES["imageEdit"]["tmp_name"]));
+    //     $descriptionEdit=$_POST['descriptionEdit'];
+
+    //     $queryedit = "UPDATE product SET id='$_GET[eid]', product_name = $productnameEdit, manufacturer = $manufacturerEdit, product_category = $categoryEdit, actualprice = $actualpriceEdit, product_price = $sellingpriceEdit, product_qty = $quantityEdit, product_image = $imageEdit, description = $descriptionEdit WHERE id='$_GET[eid]'";
+    //     $queryedit_run = mysqli_query($db,$queryedit);
+
+    //     if($queryedit_run !=null){
+    //         header("refresh:1;url=myproducts.php");
+    //         echo '<script type="text/javascript"> alert("Product successfully edited!") </script>';
+    //     }else{
+    //         header("refresh:1;url=myproducts.php");
+    //         echo '<script type="text/javascript"> alert("Product failed to edit!") </script>';
+    //     }
+    // }
+
+
     //get products from database
     function getProduct(){
         global $db;
@@ -60,7 +84,7 @@
             $productdetail= "SELECT * FROM product where id='$_GET[gid]'";
             $productdetail_result = mysqli_query($db,$productdetail);
             while($row = mysqli_fetch_assoc($productdetail_result)){
-                singleItem($row['product_name'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['product_category'],$row['manufacturer'],$row['description']);
+                singleItem($row['product_name'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['product_category'],$row['manufacturer'],$row['description'],$row['id']);
             }
         }
     }
@@ -82,6 +106,18 @@
             echo "<td>$status</td>";
             echo "<td>$orderName</td>";
         echo "</tr>";
+    }
+
+    //edit product details
+    function editProductDetails(){
+        if(isset($_GET['eid'])){
+            global $db;
+            $editproductdetail= "SELECT * FROM product where id='$_GET[eid]'";
+            $editproductdetail_result = mysqli_query($db,$editproductdetail);
+            while($row = mysqli_fetch_assoc($editproductdetail_result)){
+                editSingleItem($row['product_name'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['product_category'],$row['manufacturer'],$row['description'],$row['actualprice']);
+            }
+        }
     }
 
     

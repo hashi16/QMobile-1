@@ -32,7 +32,7 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
 echo $element;
 }
 
-function singleItem($productname,$productprice,$productimg,$productqty,$productcatogory,$manufacturer,$description){
+function singleItem($productname,$productprice,$productimg,$productqty,$productcatogory,$manufacturer,$description,$id){
     $element2 ="
     <section class='single-product'>
         <div class='container'>
@@ -50,7 +50,7 @@ function singleItem($productname,$productprice,$productimg,$productqty,$productc
                     <p><b>Brand : </b>$manufacturer</p>
                     <p><b>Category : </b>$productcatogory</p>
                     <p><b>Remaining Quantity : </b>$productqty</p>
-                    <button type='button' class='btn btn-secondary'>Edit Product</button>
+                    <a href='editproduct.php?eid=$id' class='btn btn-secondary'>Edit Product</a>
                 </div>
             </div>
         </div>
@@ -67,6 +67,84 @@ function singleItem($productname,$productprice,$productimg,$productqty,$productc
     </section>
     ";
     echo $element2;
+}
+
+function editSingleItem($productname,$sellingprice,$productimage,$productqty,$productcategory,$manufacturer,$description,$actualprice){
+    $editdetail ="
+        <div class='card card-body'>
+            <form action='dbconnection.php' method='post' enctype='multipart/form-data'>
+                <h4 class='card-header'>Edit Here What You're Selling</h4><br>
+                <div class='card-text'>
+                    <div class='form-group row'>
+                        <label for='productName' class='col-sm-2 col-form-label'>Product Name</label>
+                        <div class='col-sm-10'>
+                            <input type='text' class='form-control' name='productNameEdit' id='productNameEdit' placeholder='$productname' required>
+                        </div>
+                    </div>
+                </div>
+                <div class='card-text'>
+                    <div class='form-group row'>
+                        <label for='manufacturer' class='col-sm-2 col-form-label'>Manufacturer</label>
+                        <div class='col-sm-10'>
+                            <input type='text' class='form-control' name='manufacturerEdit' id='manufacturerEdit' placeholder='$manufacturer' required>
+                        </div>
+                    </div>
+                </div>
+                <div class='card-text'>
+                    <div class='form-group row'>
+                        <label for='category' class='col-sm-2 col-form-label'>Category</label>
+                        <div class='col-sm-10'>
+                            <input type='text' class='form-control' name='categoryEdit' id='categoryEdit' placeholder='$productcategory' required>
+                        </div>
+                    </div>
+                </div>
+                <div class='card-text'>
+                    <div class='form-group row'>
+                        <label for='actualprice' class='col-sm-2 col-form-label'>Actual Price</label>
+                        <div class='col-sm-10'>
+                            <input type='number' class='form-control' name='actualpriceEdit' id='actualpriceEdit' placeholder='$actualprice'>
+                        </div>
+                    </div>
+                </div>
+                <div class='card-text'>
+                    <div class='form-group row'>
+                        <label for='sellingprice' class='col-sm-2 col-form-label'>Selling Price</label>
+                        <div class='col-sm-10'>
+                            <input type='number' class='form-control' name='sellingpriceEdit' id='sellingpriceEdit' placeholder='$sellingprice' required>
+                        </div>
+                    </div>
+                </div>
+                <div class='card-text'>
+                    <div class='form-group row'>
+                        <label for='quantity' class='col-sm-2 col-form-label'>Quantity</label>
+                        <div class='col-sm-10'>
+                            <input type='number' class='form-control' name='quantityEdit' id='quantityEdit' placeholder='$productqty' required>
+                        </div>
+                    </div>
+                </div>
+                <div class='card-text'>
+                    <div class='form-group row'>
+                        <label for='description' class='col-sm-2 col-form-label'>Description</label>
+                        <div class='col-sm-10'>
+                            <textarea class='form-control' name='descriptionEdit' id='descriptionEdit' rows='4'>$description</textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class='card-text'>
+                    <div class='form-group row'>
+                        <label for='importimg' class='col-sm-2 col-form-label'>Import Image</label>
+                        <div class='col-sm-10'>
+                            <div class='custom-file'>
+                                <input type='file' id='imageEdit' name='imageEdit' placeholder='$productimage'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type='submit' class='btn btn-primary ml-auto' id='editproductitem' name='editproductitem' value='Edit'>
+            </form>
+        </div>
+    ";
+    echo $editdetail;
 }
  ?>
  <script>
