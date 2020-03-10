@@ -1,3 +1,7 @@
+<?php
+    include('component.php');
+    include('dbconnection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,8 +77,11 @@
         <h1>&nbsp;&nbsp;Products</h1>
     </div><br>
 
-    <!--Single Product-->      
-    <section class="single-product">
+    <!--Single Product-->
+    <?php
+        getProductDetail();
+    ?>
+    <!-- <section class="single-product">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
@@ -106,7 +113,6 @@
         </div>
     </section>
 
-    <!--product Description-->      
     <section class="product-descrption mt-3">
     <div class="container">
         <h6>Product Description</h6>
@@ -116,7 +122,7 @@
         </p>
         <hr>
         </div>
-    </section>
+    </section> -->
 
     <!---javaScript cdn----->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -1,6 +1,7 @@
-<?php  ?>
-
-
+<?php
+    include('include_store\component.php');
+    include('dbconnection.php');
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -74,7 +75,10 @@
     </div>
 
     <!--Single Product-->
-    <section class="single-product">
+    <?php
+        getProductDetail();
+    ?>
+    <!-- <section class="single-product">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
@@ -108,7 +112,6 @@
         </div>
     </section>
 
-    <!--product Description-->
     <section class="product-descrption">
     <div class="container">
         <h6>Product Description</h6>
@@ -118,7 +121,7 @@
         </p>
         <hr>
         </div>
-    </section>
+    </section> -->
 
      <!-- Footer -->
     <footer class="footer">

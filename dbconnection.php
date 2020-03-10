@@ -438,6 +438,18 @@ if (isset($_GET['logout'])) {
   }
   }
 
+  //View products in details
+  function getProductDetail(){
+    if(isset($_GET['gid'])){
+        global $db;
+        $productdetail= "SELECT * FROM product where id='$_GET[gid]'";
+        $productdetail_result = mysqli_query($db,$productdetail);
+        while($row = mysqli_fetch_assoc($productdetail_result)){
+            singleItem($row['product_name'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['product_category'],$row['manufacturer'],$row['description']);
+        }
+    }
+}
+
 // if(isset($_POST['order'])){
 //   order();
 // }

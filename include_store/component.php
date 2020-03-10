@@ -6,9 +6,10 @@ function store($productname,$actualprice,$productprice,$productimg,$productqty,$
         <form class =\"\" action=\"store.php\" method=\"post\">
             <img src=\"$productimg\">
             <div class=\"overlay-right\">
-                <button type=\"button\" class=\"btn btn-warning\" title=\"Quick Shop\">
-                    <a href=\"product.php\"><i class=\"fas fa-eye\"></i></a>
-                </button>
+                <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                    <input type='hidden' name='product_id' value='$productid'>
+                    <i class=\"fas fa-eye\"></i>
+                </a>
                 <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
                     <input type='hidden' name='product_id' value='$productid'>
                     <i class=\"fas fa-shopping-cart\"></i>
@@ -61,4 +62,48 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
   ";
   echo $element;
 }
+
+
+
+function singleItem($productname,$productprice,$productimg,$productqty,$productcatogory,$manufacturer,$description){
+  $element2 ="
+  <section class='single-product'>
+      <div class='container'>
+          <div class='row'>
+              <div class='col-md-5'>
+                  <div id='product-slider'>
+                      <div>
+                          <img src='$productimg' class='d-block'>
+                      </div>
+                  </div>
+              </div>
+              <div class='col-md-7'>
+                  <h2>$productname</h2>
+                  <p class='price'>$productprice</p>
+                  <p><b>Brand : </b>$manufacturer</p>
+                  <p><b>Category : </b>$productcatogory</p>
+                  <p><b>Remaining Quantity : </b>$productqty</p>
+                  <button type='button' class='btn btn-secondary'>Edit Product</button>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class='product-descrption mt-3'>
+      <div class='container'>
+          <h6>Product Description</h6>
+          <p>
+              $description
+          </p>
+          <hr>
+      </div>
+  </section>
+  ";
+  echo $element2;
+}
  ?>
+ <script>
+  function product(gid){
+    window.location.href = "product.php?id="+id;
+  }
+ </script>
