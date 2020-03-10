@@ -33,7 +33,6 @@ echo $element;
 
 function cartElement($productimg, $productname,$productprice,$productqty,$productid){
   $element="
-<form class=\"cart-items\" action=\"cart.php?action=remove&id=$productid\" method=\"post\">
     <div class=\"border rounded\">
       <div class=\"row bg-white\">
         <div class=\"col-md-3 pl-0\">
@@ -43,9 +42,9 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
           <h5 class=\"pt-2\"><strong>$productname</strong></h5>
            <h5 class=\"pt-2\">Rs.$productprice</h5>
 
-           <button type=\"submit\" name=\"order\" class=\"btn btn-success\">Order</button>
+           <a href='cart.php?oid=$productid' name=\"order\" class=\"btn btn-success\">Order</a>
            
-           <button type=\"submit\" name=\"remove\" class=\"btn btn-danger mx-2\">Remove</button>
+           <a href='cart.php?id=$productid' name=\"remove\" class=\"btn btn-danger mx-2\">Remove</a>
         </div>
         <div class=\"col-md-3 py-5\">
            <div>
@@ -57,8 +56,6 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
 
        </div>
     </div>
-</form>
-
   ";
   echo $element;
 }

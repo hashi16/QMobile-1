@@ -2,8 +2,9 @@
 include('include_store\component.php');
 
 
-if(isset($_POST['remove'])){
- if($_GET['action'] == 'remove'){
+
+//Remove from cart
+if(isset($_GET['id'])){
    foreach ($_SESSION['cart'] as $key => $value) {
      if ($value["product_id"] == $_GET['id']) {
        unset($_SESSION['cart'][$key]);
@@ -11,19 +12,21 @@ if(isset($_POST['remove'])){
        echo "<script>window.location = 'cart.php'</script>";
      }
    }
- }
 }
-
-if(isset($_POST['order'])){
-  if($_GET['action'] == 'order'){
-    foreach ($_SESSION['cart'] as $key => $value) {
-      if($value["product_id"] == $_GET['id']){
-        // unset($_SESSION['cart']['$key']);
-        echo "<script>alert('Product has been ordered..')</script>";
-        echo "<script>window.location = 'order.php'</script>";
-      }
+//Order from cart
+if(isset($_GET['oid'])){
+    if (!isLoggedIn()) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }else{
+        foreach ($_SESSION['cart'] as $key => $value) {
+            if($value["product_id"] == $_GET['oid']){
+              unset($_SESSION['cart'][$key]);
+              echo "<script>alert('Product has been ordered..')</script>";
+              echo "<script>window.location = 'order.php'</script>";
+            }
+        }
     }
-  }
 }
 
 // order();
