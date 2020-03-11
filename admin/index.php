@@ -113,22 +113,7 @@
     </div><br>
     <!--Summary cards-->
     <div class="row mr-2 ml-2">
-        <div class="col-6 col-sm-3">
-            <div class="card card-body bg-light mb-4">
-                <div class="row">
-                    <div class="col-12 col-sm-4 mb-1">
-                        <div class="card card-body bg-success">
-                            <i class="fas fa-chart-bar fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-8 align-self-center">
-                        <h4><b>Today Outcome</b></h4>
-                        <h4 class="text-muted">10</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-6 col-sm-3">
+        <div class="col-6 col-sm-4">
             <div class="card card-body bg-light mb-4">
                 <div class="row">
                     <div class="col-12 col-sm-4 mb-1">
@@ -137,13 +122,19 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-8 align-self-center">
+                        <?php 
+                            $db = mysqli_connect('localhost','root','','registeruser');
+                            $result = mysqli_query($db,"select count(1) FROM orders");
+                            $row = mysqli_fetch_array($result);
+                            $total = $row[0];
+                        ?>
                         <h4><b>Today Orders</b></h4>
-                        <h4 class="text-muted">10</h4>
+                        <h4 class="text-muted"><?php echo $total; ?></h4>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-6 col-sm-3">
+        <div class="col-6 col-sm-4">
             <div class="card card-body bg-light mb-4">
                 <div class="row">
                     <div class="col-12 col-sm-4 mb-1">
@@ -152,13 +143,19 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-8 align-self-center">
+                        <?php 
+                            $db = mysqli_connect('localhost','root','','registeruser');
+                            $result = mysqli_query($db,"select count(1) FROM user");
+                            $row = mysqli_fetch_array($result);
+                            $total = $row[0];
+                        ?>
                         <h4><b>Customers</b></h4>
-                        <h4 class="text-muted">10</h4>
+                        <h4 class="text-muted"><?php echo $total; ?></h4>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-6 col-sm-3">
+        <div class="col-6 col-sm-4">
             <div class="card card-body bg-light mb-4">
                 <div class="row">
                     <div class="col-12 col-sm-4 mb-1">
@@ -167,8 +164,14 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-8 align-self-center">
+                        <?php 
+                            $db = mysqli_connect('localhost','root','','registeruser');
+                            $result = mysqli_query($db,"select count(1) FROM feedback");
+                            $row = mysqli_fetch_array($result);
+                            $total = $row[0];
+                        ?>
                         <h4><b>Feedbacks</b></h4>
-                        <h4 class="text-muted">10</h4>
+                        <h4 class="text-muted"><?php echo $total; ?></h4>
                     </div>
                 </div>
             </div>
