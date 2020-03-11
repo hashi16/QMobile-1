@@ -165,7 +165,7 @@
                     <!--Store Products-->
                     <div class="row">
                         <?php
-                            getProduct();
+                            getCharger();
                         ?>
                     </div><br>
                 </div>

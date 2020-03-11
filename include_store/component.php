@@ -46,14 +46,6 @@ function cartElement($productimg, $productname,$productprice,$productqty,$produc
            
            <a href='cart.php?id=$productid' name=\"remove\" class=\"btn btn-danger mx-2\">Remove</a>
         </div>
-        <div class=\"col-md-3 py-5\">
-           <div>
-           <button type=\"submit\" name=\"\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-minus\"></i> </button>
-            <input type=\"text\" name=\"qty\" value=\"1\" class=\"form-control w-25 d-inline\">
-          <button type=\"submit\" name=\"\" class=\"btn bg-light border rounded-circle\"><i class=\"fas fa-plus\"></i> </button>
-        </div>
-        </div>
-
        </div>
     </div>
   ";
@@ -98,6 +90,409 @@ function singleItem($productname,$productprice,$productimg,$productqty,$productc
   ";
   echo $element2;
 }
+
+
+function backcover($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $backcover ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $backcover;
+   }
+
+
+   function handfree($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $handfree ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $handfree;
+   }
+
+
+   function huawei($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $huawei ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $huawei;
+   }
+
+
+   function samsung($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $samsung ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $samsung;
+   }
+
+
+   function apple($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $apple ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $apple;
+   }
+
+
+   function xiaomi($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $xiaomi ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $xiaomi;
+   }
+
+
+   function google($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $google ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $google;
+   }
+
+
+   function nokia($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $nokia ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $nokia;
+   }
+
+
+   function oppo($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $oppo ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $oppo;
+   }
+
+
+   function mobilephone($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $mobilephone ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $mobilephone;
+   }
+
+
+   function charger($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $charger ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $charger;
+   }
+
+
+   function tempered($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $tempered ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $tempered;
+   }
+
+
+   function battery($productname,$actualprice,$productprice,$productimg,$productqty,$productid,$productcatogory,$manufacturer){
+    $battery ="
+   <div class=\"col-6 col-md-3\">
+           <div class=\"product-top\">
+           <form class =\"\" action=\"store.php\" method=\"post\">
+               <img src=\"$productimg\">
+               <div class=\"overlay-right\">
+                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-eye\"></i>
+                   </a>
+                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                       <input type='hidden' name='product_id' value='$productid'>
+                       <i class=\"fas fa-shopping-cart\"></i>
+                   </button>
+               </div>
+               <div class=\"product-bottom text-center\">
+                   <h4>$productname</h4>
+                   <h5>$manufacturer</h5>
+                   <h5>$productcatogory</h5>
+                   <small><s class=\"text-secondary\">RS.$actualprice</s></small>
+                   <h5>Rs.$productprice</h5>
+               </div>
+           </form>
+       </div>
+   </div>
+   ";
+   echo $battery;
+   }
  ?>
  <script>
   function product(gid){

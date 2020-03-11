@@ -165,7 +165,7 @@
                     <!--Store Products-->
                     <div class="row">
                         <?php
-                            getProduct();
+                            getHandfree();
                         ?>
                     </div><br>
                 </div>

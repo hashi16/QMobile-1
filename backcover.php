@@ -165,7 +165,7 @@
                     <!--Store Products-->
                     <div class="row">
                         <?php
-                            getProduct();
+                            getBackCover();
                         ?>
                     </div><br>
                 </div>

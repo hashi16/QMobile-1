@@ -439,6 +439,201 @@ if (isset($_GET['logout'])) {
   }
   }
 
+  //get mobile phone from database to mobile phone page
+  function getMobilePhone(){
+    global $db;
+    $mobilephone = "SELECT * FROM product WHERE product_category='Mobile Phone'";
+
+    $mobilephoneresult = mysqli_query($db,$mobilephone);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($mobilephoneresult)){
+        mobilephone($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get backcovers from database to back cover page
+  function getBackCover(){
+    global $db;
+    $backcover = "SELECT * FROM product WHERE product_category='Back Cover'";
+
+    $backcoverresult = mysqli_query($db,$backcover);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($backcoverresult)){
+        backcover($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get handfree from database to handfree page
+  function getHandfree(){
+    global $db;
+    $handfree = "SELECT * FROM product WHERE product_category='Handfree'";
+
+    $handfreeresult = mysqli_query($db,$handfree);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($handfreeresult)){
+        handfree($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get charger from database to charger page
+  function getCharger(){
+    global $db;
+    $charger = "SELECT * FROM product WHERE product_category='Charger'";
+
+    $chargerresult = mysqli_query($db,$charger);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($chargerresult)){
+        charger($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get battery from database to battery page
+  function getBattery(){
+    global $db;
+    $battery = "SELECT * FROM product WHERE product_category='Battery'";
+
+    $batteryresult = mysqli_query($db,$battery);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($batteryresult)){
+        battery($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get tempered from database to tempered page
+  function getTempered(){
+    global $db;
+    $tempered = "SELECT * FROM product WHERE product_category='Tempered'";
+
+    $temperedresult = mysqli_query($db,$tempered);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($temperedresult)){
+        tempered($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get huawei from database to huawei page
+  function getHuawei(){
+    global $db;
+    $huawei = "SELECT * FROM product WHERE manufacturer='Huawei'";
+
+    $huaweiresult = mysqli_query($db,$huawei);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($huaweiresult)){
+        huawei($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get xiaomi from database to xiaomi page
+  function getXiaomi(){
+    global $db;
+    $xiaomi = "SELECT * FROM product WHERE manufacturer='Xiaomi'";
+
+    $xiaomiresult = mysqli_query($db,$xiaomi);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($xiaomiresult)){
+        xiaomi($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get google from database to google page
+  function getGoogle(){
+    global $db;
+    $google = "SELECT * FROM product WHERE manufacturer='Google'";
+
+    $googleresult = mysqli_query($db,$google);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($googleresult)){
+        google($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get nokia from database to nokia page
+  function getNokia(){
+    global $db;
+    $nokia = "SELECT * FROM product WHERE manufacturer='Nokia'";
+
+    $nokiaresult = mysqli_query($db,$nokia);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($nokiaresult)){
+        nokia($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get oppo from database to oppo page
+  function getOppo(){
+    global $db;
+    $oppo = "SELECT * FROM product WHERE manufacturer='Oppo'";
+
+    $opporesult = mysqli_query($db,$oppo);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($opporesult)){
+        oppo($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get apple from database to apple page
+  function getApple(){
+    global $db;
+    $apple = "SELECT * FROM product WHERE manufacturer='Apple'";
+
+    $appleresult = mysqli_query($db,$apple);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($appleresult)){
+        apple($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get samsung from database to samsung page
+  function getSamsung(){
+    global $db;
+    $samsung = "SELECT * FROM product WHERE manufacturer='Samsung'";
+
+    $samsungresult = mysqli_query($db,$samsung);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($samsungresult)){
+        samsung($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
   //get products from database to home page
   function getProductIndex(){
     global $db;
