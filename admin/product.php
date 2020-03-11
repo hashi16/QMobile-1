@@ -1,6 +1,19 @@
 <?php
     include('component.php');
     include('dbconnection.php');
+    session_start();
+
+    if (!isLoggedIn()) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: admin_login.php');
+    }
+    function isLoggedIn(){
+        if(isset($_SESSION['username'])){
+            return true;
+        }else{
+            return false;
+        }    
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -59,12 +72,20 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="profile.php" class="nav-link">
-                        <i class="fas fa-user-alt"></i> Profile
+                    <a href="register_admin.php" class="nav-link">
+                        <i class="fas fa-user-plus"></i> Register
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                <?php
+                        if($_SESSION['username']==true){
+                    ?>
+                            <i style="#888;">(<?php echo $_SESSION['username']; ?>)</i><br>
+                    <?php }else{
+                            header('location:admin_login.php');
+                        }
+                    ?>
+                    <a href="logout.php" class="nav-link">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </li>               

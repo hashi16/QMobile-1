@@ -1,6 +1,19 @@
 <?php
+    session_start();
     include('component.php');
     include('dbconnection.php');
+
+    if (!isLoggedIn()) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: admin_login.php');
+    }
+    function isLoggedIn(){
+        if(isset($_SESSION['username'])){
+            return true;
+        }else{
+            return false;
+        }    
+    }
 ?>
 
 <!DOCTYPE html>
@@ -60,12 +73,20 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="profile.php" class="nav-link">
-                        <i class="fas fa-user-alt"></i> Profile
+                    <a href="register_admin.php" class="nav-link">
+                        <i class="fas fa-user-plus"></i> Register
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <?php
+                        if($_SESSION['username']==true){
+                    ?>
+                            <i style="#888;">(<?php echo $_SESSION['username']; ?>)</i><br>
+                    <?php }else{
+                            header('location:admin_login.php');
+                        }
+                    ?>
+                    <a href="logout.php" class="nav-link">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </li>               
@@ -130,186 +151,6 @@
                 ?>
             </div><br>
 
-            <!--<div class="row">
-                <div class="col-6 col-md-3">
-                    <div class="product-top">
-                        <img src="./Resourse/product/pr1.jpg">
-                        <div class="overlay-right">
-                            <button type="button" class="btn btn-secondary" title="Quick Shop">
-                                <a href="./product.php"><i class="fas fa-eye"></i></a>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Remove Item" id="remove">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <h4>Samsung A10</h4>
-                        <h5>Rs.7300.00</h5>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="product-top">
-                        <img src="./Resourse/product/pr2.jpg">
-                        <div class="overlay-right">
-                            <button type="button" class="btn btn-secondary" title="Quick Shop">
-                            <i class="fas fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Remove Item" id="remove">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>Huwaei Nova 5T</h4>
-                        <h5>Rs.11000.00</h5>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="product-top">
-                        <img src="./Resourse/product/pr3.jpg">
-                        <div class="overlay-right">
-                            <button type="button" class="btn btn-secondary" title="Quick Shop">
-                            <i class="fas fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Remove Item" id="remove">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <h4>Oppo F11 Pro</h4>
-                        <h5>Rs.15000.00</h5>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="product-top">
-                        <img src="./Resourse/product/pr4.jpg">
-                        <div class="overlay-right">
-                            <button type="button" class="btn btn-secondary" title="Quick Shop">
-                            <i class="fas fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Remove Item" id="remove">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <h4>Nokia 6.1Plus</h4>
-                        <h5>Rs.5500.00</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-6 col-md-3">
-                    <div class="product-top">
-                        <img src="./Resourse/product/pr5.jpg">
-                        <div class="overlay-right">
-                            <button type="button" class="btn btn-secondary" title="Quick Shop">
-                            <i class="fas fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Remove Item" id="remove">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <h4>Phone Charger</h4>
-                        <h5>Rs.800.00</h5>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="product-top">
-                    <img src="./Resourse/product/pr6.jpg">
-                        <div class="overlay-right">
-                            <button type="button" class="btn btn-secondary" title="Quick Shop">
-                            <i class="fas fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Remove Item" id="remove">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <h4>Handfree</h4>
-                        <h5>Rs.1000.00</h5>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="product-top">
-                        <img src="./Resourse/product/pr7.jpg">
-                        <div class="overlay-right">
-                            <button type="button" class="btn btn-secondary" title="Quick Shop">
-                            <i class="fas fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Remove Item" id="remove">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <h4>Wireless Charger</h4>
-                        <h5>Rs.3300.00</h5>
-                    </div>
-                </div> 
-                <div class="col-6 col-md-3">
-                    <div class="product-top">
-                        <img src="./Resourse/product/pr8.jpg">
-                        <div class="overlay-right">
-                            <button type="button" class="btn btn-secondary" title="Quick Shop">
-                            <i class="fas fa-eye"></i>
-                            </button>
-                            <button type="button" class="btn btn-secondary" title="Remove Item" id="remove">
-                                <i class="fas fa-minus-circle"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="product-bottom text-center">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                        <i class="far fa-star"></i>
-                        <h4>AirPods</h4>
-                        <h5>Rs.2700.00</h5>
-                    </div>
-                </div>               
-            </div>-->
             <!--Paginations-->
             <div class="row">
                 <div class="col-md-12">
