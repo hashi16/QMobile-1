@@ -11,7 +11,7 @@
         $actualprice=$_POST['actualprice'];
         $sellingprice=$_POST['sellingprice'];
         $quantity=$_POST['quantity'];
-        $image=addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+        $image="Resourses/product/".basename($_FILES["image"]["name"]);
         $description=$_POST['description'];
 
         $query = "INSERT INTO product(product_name,manufacturer,product_category,actualprice,product_price,product_qty,product_image,description) VALUES('$productname','$manufacturer','$category','$actualprice','$sellingprice','$quantity','$image','$description')";
@@ -48,7 +48,7 @@
         $actualpriceEdit=$_POST['actualpriceEdit'];
         $sellingpriceEdit=$_POST['sellingpriceEdit'];
         $quantityEdit=$_POST['quantityEdit'];
-        $imageEdit=addslashes(file_get_contents($_FILES["imageEdit"]["tmp_name"]));
+        $imageEdit="Resourses/product/".basename($_FILES["imageEdit"]["name"]);
         $descriptionEdit=$_POST['descriptionEdit'];
 
         $queryedit = "UPDATE product SET manufacturer = '$manufacturerEdit', product_category = '$categoryEdit', actualprice = '$actualpriceEdit', product_price = '$sellingpriceEdit', product_qty = '$quantityEdit', product_image = '$imageEdit', description = '$descriptionEdit' WHERE product_name = '$productnameEdit'";
