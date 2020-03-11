@@ -1,5 +1,5 @@
 <?php include('dbconnection.php');
-include('include_store\component.php');
+include('component.php');
 
 
 

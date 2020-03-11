@@ -1,5 +1,5 @@
 <?php
-include('./dbconnection.php');
+include('dbconnection.php');
 
 if(!isAdmin()) {
 	$_SESSION['msg'] = "You must log in first";

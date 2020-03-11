@@ -49,7 +49,7 @@ include('dbconnection.php')
                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                            <a class="dropdown-item" href="./order.php">My Orders <span class="fas fa-shopping-bag fa-lg"></span></a>
                            <a class="dropdown-item" href="./cart.php">Cart <span class="fa fa-shopping-cart fa-lg"></span></a>
-                           <a class="dropdown-item" href="./user.php">Profile <span class="fa fa-user fa-lg"></span></a>
+                           <a class="dropdown-item" href="./userprofile.php">Profile <span class="fa fa-user fa-lg"></span></a>
                        </div>
                    </li>
                </ul>

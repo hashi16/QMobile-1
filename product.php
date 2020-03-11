@@ -1,5 +1,5 @@
 <?php
-    include('include_store\component.php');
+    include('component.php');
     include('dbconnection.php');
 ?>
 <!doctype html>

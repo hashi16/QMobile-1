@@ -1,7 +1,7 @@
 <?php
 include('dbconnection.php');
 //include('include_store\component.php');
-include('include_store\items.php');
+include('items.php');
 
 // if(isset($_POST['add'])){
 //   //print_r($_POST['product_id']);

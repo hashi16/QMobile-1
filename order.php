@@ -1,5 +1,5 @@
 <?php include('dbconnection.php');
-include('include_store\component.php');
+include('component.php');
 
 if (!isLoggedIn()) {
     $_SESSION['msg'] = "You must log in first";

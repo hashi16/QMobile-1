@@ -1,5 +1,5 @@
 <?php
-    include('include_store\component.php');
+    include('component.php');
     include('dbconnection.php');
 
     if(isset($_POST['add'])){
@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    <?php include('include_store\header.php'); ?>
+                    <?php include('header.php'); ?>
                     <!--Filter price range-->
                     <!-- <div class="row">
                         <div class="col-12">
