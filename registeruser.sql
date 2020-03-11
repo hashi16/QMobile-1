@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2020 at 10:33 AM
+-- Generation Time: Mar 11, 2020 at 09:38 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -34,6 +34,13 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`username`, `fname`, `lname`, `email`, `password`) VALUES
+('iniesta8', 'Dasith', 'Deelaka', 'deelakajagoda@gmail.com', '4849ef68cba71d52b56694cc2f88bb11');
 
 -- --------------------------------------------------------
 
@@ -90,6 +97,13 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`orderId`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`orderId`, `orderdate`, `status`, `orderName`) VALUES
+(1, '2020-03-12', 'Processed', 'Samsung Galaxy Note 10');
+
 -- --------------------------------------------------------
 
 --
@@ -121,22 +135,22 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_image` varchar(255) NOT NULL,
   `description` varchar(5000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `product_name`, `manufacturer`, `product_category`, `actualprice`, `product_price`, `product_qty`, `product_image`, `description`) VALUES
-(5, 'Apple Iphone Charger', 'Apple', 'Charger', '4000.00', '3000.00', 100, 'Resourses/product/pr5.jpg', ''),
-(6, 'Pinang Handfree', 'Pinang', 'Handfree', '600.00', '550.00', 100, 'Resourses/product/pr6.jpg', ''),
-(9, 'Samsung Galaxy Note 10', 'Samsung', 'Mobile Phone', '170000.00', '160000.00', 100, 'Resourses/product/pr9.jpg', ''),
-(8, 'Apple Airpod', 'Apple', 'Handfree', '4500.00', '4000.00', 100, 'Resourses/product/pr8.jpg', ''),
-(7, 'Samsung Wireless Charger', 'Samsung', 'Charger', '1000.00', '950.00', 100, 'Resourses/product/pr7.jpg', ''),
 (1, 'Samsung Galaxy M20', 'Samsung', 'Mobile Phone', '50000.00', '45000.00', 100, 'Resourses/product/pr1.jpg', ''),
 (2, 'Huawei P30', 'Huawei', 'Mobile Phone', '34000.00', '30000.00', 100, 'Resourses/product/pr2.jpg', ''),
 (3, 'Oppo F15', 'Oppo', 'Mobile Phone', '45000.00', '40000.00', 100, 'Resourses/product/pr3.jpg', ''),
-(4, 'Nokia 6.1 Plus (Nokia X6)', 'Nokia', 'Mobile Phone', '24000.00', '22000.00', 100, 'Resourses/product/pr4.jpg', '');
+(4, 'Nokia 6.1 Plus (Nokia X6)', 'Nokia', 'Mobile Phone', '24000.00', '22000.00', 100, 'Resourses/product/pr4.jpg', ''),
+(7, 'Samsung Wireless Charger', 'Samsung', 'Charger', '1000.00', '950.00', 100, 'Resourses/product/pr7.jpg', ''),
+(5, 'Apple Iphone Charger', 'Apple', 'Charger', '4000.00', '3000.00', 100, 'Resourses/product/pr5.jpg', ''),
+(6, 'Pinang Handfree', 'Pinang', 'Handfree', '600.00', '550.00', 100, 'Resourses/product/pr6.jpg', ''),
+(9, 'Samsung Galaxy Note 10', 'Samsung', 'Mobile Phone', '170000.00', '160000.00', 100, 'Resourses/product/pr9.jpg', ''),
+(8, 'Apple Airpod', 'Apple', 'Handfree', '4500.00', '4000.00', 100, 'Resourses/product/pr8.jpg', '');
 
 -- --------------------------------------------------------
 
