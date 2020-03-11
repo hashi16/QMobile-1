@@ -53,10 +53,10 @@ include('dbconnection.php')
                        </div>
                    </li>
                </ul>
-               <form class="form-inline my-2 my-lg-0">
+               <!-- <form class="form-inline my-2 my-lg-0">
                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-               </form>
+               </form> -->
                <div class="menu-bar">
                    <ul>
                        <li><a href="register.php">Register <i class="fas fa-user-plus fa-dark"></i></a></li>
@@ -105,7 +105,7 @@ include('dbconnection.php')
                         <label class="label col-form-label">Password</label>
                         <input type="password" name="password" class="form-control"  value="<?php if(isset($_COOKIE["password"])) {echo $_COOKIE["password"]; }?>" placeholder="Enter Password..." required/>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-6">
                             <input type="checkbox" name="remember" ><small class="mt-2"> Remember me</small>
                         </div>
@@ -122,7 +122,7 @@ include('dbconnection.php')
 
                           <a href="enter_eamil.php"><p id="pass" class="text-right">Forget Password</p></a>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group">
                         <input type="submit" name="login" class="btn btn-success btn-lg btn-block" value="Login"><br>

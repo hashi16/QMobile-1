@@ -124,7 +124,7 @@
         </div>
         <div class="col-md-9">
             <!--Filter price range-->
-            <div class="row ju">
+            <!-- <div class="row ju">
                 <div class="col-12">
                     <div class="card card-body bg-light">
                         <form class="form-inline justify-content-center" method="post" enctype="multipart/form-data">
@@ -143,7 +143,7 @@
                         </form>
                     </div><br>
                 </div>
-            </div>
+            </div> -->
             <!--Store Products-->
             <div class="row">
                 <?php
