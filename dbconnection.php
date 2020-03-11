@@ -302,6 +302,23 @@ if (isset($_GET['logout'])) {
      	}
      }
 
+     //Get order details from database
+    function getOrderDetails(){
+      global $db;
+      $order = "SELECT * FROM orders";
+      $order_result = mysqli_query($db,$order);
+      while($row = mysqli_fetch_assoc($order_result)){
+          orderdetails($row['orderId'],$row['orderdate'],$row['status'],$row['orderName']);
+      }
+    } 
+    function orderdetails($orderId,$orderdate,$status,$orderName){
+        echo "<tr>";
+            echo "<td>$orderId</td>";
+            echo "<td>$orderdate</td>";
+            echo "<td>$status</td>";
+            echo "<td>$orderName</td>";
+        echo "</tr>";
+    }
 
  //remeber me in login page
  //

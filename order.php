@@ -1,6 +1,11 @@
 <?php include('dbconnection.php');
 include('include_store\component.php');
 
+if (!isLoggedIn()) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');    
+}
+
 if(isset($_POST['order'])){
  if($_GET['action'] == 'order'){
    foreach ($_SESSION['cart'] as $key => $value) {
@@ -108,14 +113,16 @@ if(isset($_POST['order'])){
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										<th colspan="2">Product</th>
-										<th>Quantity</th>
-										<th>Unit Price</th>
-										<th colspan="1">Order Date</th>
-										<th colspan="2">Total</th>
+										<th scope="col">Order ID</th>
+										<th scope="col">Order Date</th>
+										<th scope="col">Status</th>
+										<th scope="col">Order Description</th>
 									</tr>
 								</thead>
 								<tbody>
+                                    <?php
+                                        getOrderDetails();
+                                    ?>
 								</tbody>
 							</table><br>
 						</div>
