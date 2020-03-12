@@ -648,7 +648,7 @@ if (isset($_GET['logout'])) {
 
       while($row = mysqli_fetch_assoc($result)){
         store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
-  }
+      }
   }
 
   //View products in details
@@ -672,9 +672,28 @@ if (isset($_GET['logout'])) {
 // }
 
 
+//insert order details into database
 function retrieveproductorder($productname,$productprice){
   $query = "INSERT INTO orders(orderdate,status,orderName,price) VALUES('2020-03-12','Processing','$productname','$productprice')";
   global $db;
   $query_run = mysqli_query($db,$query);
+}
+
+
+//Filter price range
+function filterPrice(){
+  if(isset($_POST['priceSort'])){
+    $minprice=$_POST['minPrice'];
+    $maxprice=$_POST['maxPrice'];
+    
+    global $db;
+  
+    $filterprice = "SELECT * FROM product WHERE product_price BETWEEN $minprice AND $maxprice";
+    $filterprice_result = mysqli_query($db,$filterprice);
+  
+    while($row = mysqli_fetch_assoc($filterprice_result)){
+      store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+    }
+  }
 }
 ?>

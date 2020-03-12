@@ -142,7 +142,7 @@
                 <div class="col-md-9">
                     <?php include('header.php'); ?>
                     <!--Filter price range-->
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-12">
                             <div class="card card-body bg-light">
                                 <form class="form-inline" method="post" enctype="multipart/form-data" action="filterprice.php">
@@ -161,11 +161,11 @@
                                 </form>
                             </div><br>
                         </div>
-                    </div>
+                    </div> -->
                     <!--Store Products-->
                     <div class="row">
                         <?php
-                            getProduct();
+                            filterPrice();
                         ?>
                     </div><br>
                 </div>
