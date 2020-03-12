@@ -120,7 +120,7 @@
                 <a href="tempered.php" class="list-group-item list-group-item-action bg-light">Tempered Glass</a>
                 <a href="backcover.php" class="list-group-item list-group-item-action bg-light">Back Cover</a>
                 <a href="battery.php" class="list-group-item list-group-item-action bg-light">Battery</a><br>
-              </div>
+            </div>
         </div>
         <div class="col-md-9">
             <!--Filter price range-->
@@ -147,7 +147,7 @@
             <!--Store Products-->
             <div class="row">
                 <?php
-                    getProduct();
+                    getXiaomi();
                 ?>
             </div><br>
         </div>
