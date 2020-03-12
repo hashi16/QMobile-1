@@ -7,9 +7,9 @@ include('component.php');
 if(isset($_GET['id'])){
    foreach ($_SESSION['cart'] as $key => $value) {
      if ($value["product_id"] == $_GET['id']) {
-       unset($_SESSION['cart'][$key]);
-       echo "<script>alert('Product has been removed..')</script>";
-       echo "<script>window.location = 'cart.php'</script>";
+        unset($_SESSION['cart'][$key]);
+        echo "<script>alert('Product has been removed..')</script>";
+        echo "<script>window.location = 'cart.php'</script>";
      }
    }
 }
@@ -21,9 +21,14 @@ if(isset($_GET['oid'])){
     }else{
         foreach ($_SESSION['cart'] as $key => $value) {
             if($value["product_id"] == $_GET['oid']){
-              unset($_SESSION['cart'][$key]);
-              echo "<script>alert('Product has been ordered..')</script>";
-              echo "<script>window.location = 'order.php'</script>";
+                $orderquery="SELECT * FROM product where id='$_GET[oid]'";
+                $orderquery_result = mysqli_query($db,$orderquery);
+                while($row = mysqli_fetch_assoc($orderquery_result)){
+                    retrieveproductorder($row['product_name'],$row['product_price']);
+                }
+                unset($_SESSION['cart'][$key]);
+                echo "<script>alert('Product has been ordered..')</script>";
+                echo "<script>window.location = 'order.php'</script>";
             }
         }
     }

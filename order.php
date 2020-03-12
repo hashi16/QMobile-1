@@ -117,6 +117,7 @@ if(isset($_POST['order'])){
 										<th scope="col">Order Date</th>
 										<th scope="col">Status</th>
 										<th scope="col">Order Description</th>
+                                        <th scope="col">Price</th>
 									</tr>
 								</thead>
 								<tbody>

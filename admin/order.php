@@ -105,6 +105,7 @@
                 <th scope="col">Order Date</th>
                 <th scope="col">Status</th>
                 <th scope="col">Order description</th>
+                <th scope="col">Price</th>
             </tr>
         </thead>
         <tbody>
