@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2020 at 09:38 AM
+-- Generation Time: Mar 12, 2020 at 06:08 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -94,15 +94,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `orderdate` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `orderName` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
   PRIMARY KEY (`orderId`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`orderId`, `orderdate`, `status`, `orderName`) VALUES
-(1, '2020-03-12', 'Processed', 'Samsung Galaxy Note 10');
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 -- --------------------------------------------------------
 
@@ -135,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_image` varchar(255) NOT NULL,
   `description` varchar(5000) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `product`
