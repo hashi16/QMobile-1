@@ -337,4 +337,21 @@
         samsung($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
   }
   }
+
+//Filter price range
+function filterPrice(){
+  if(isset($_POST['priceSort'])){
+    $minprice=$_POST['minPrice'];
+    $maxprice=$_POST['maxPrice'];
+    
+    global $db;
+  
+    $filterprice = "SELECT * FROM product WHERE product_price BETWEEN $minprice AND $maxprice";
+    $filterprice_result = mysqli_query($db,$filterprice);
+  
+    while($row = mysqli_fetch_assoc($filterprice_result)){
+      store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+    }
+  }
+}
 ?>

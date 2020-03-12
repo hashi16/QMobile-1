@@ -124,17 +124,17 @@
         </div>
         <div class="col-md-9">
             <!--Filter price range-->
-            <div class="row">
+            <!-- <div class="row ju">
                 <div class="col-12">
                     <div class="card card-body bg-light">
-                        <form class="form-inline" method="post" enctype="multipart/form-data" action="filterprice.php">
+                        <form class="form-inline justify-content-center" method="post" enctype="multipart/form-data">
                             <label for="">Price Range: &nbsp;</label>
                             <div class="form-group">
-                                <label for="minPrice">Min (Rs:) &nbsp;</label>
+                                <label for="">Min (Rs:) &nbsp;</label>
                                 <input type="text" class="form-control" name="minPrice" pattern="[0-9]*">
                             </div>
                             <div class="form-group">
-                                <label for="maxPrice">&nbsp; Max (Rs:)  &nbsp;</label>
+                                <label for="">&nbsp; Max (Rs:)  &nbsp;</label>
                                 <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*"> &nbsp; &nbsp;
                             </div>
                             <div class="form-group text-center">
@@ -143,11 +143,11 @@
                         </form>
                     </div><br>
                 </div>
-            </div>
+            </div> -->
             <!--Store Products-->
             <div class="row">
                 <?php
-                    getProduct();
+                    filterPrice();
                 ?>
             </div><br>
         </div>
