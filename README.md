@@ -1,4 +1,4 @@
-# Project_1_UWU_2.2
+# Project_1_UWU_2.2 || QMobile
 Ecommerce web site 2.2 project of Uva Wellassa University.
 Clone the repository
 Create a database called "registeruser" in your localhost/phpmyadmin
