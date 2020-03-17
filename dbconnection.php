@@ -696,4 +696,21 @@ function filterPrice(){
     }
   }
 }
+
+
+//search box in navigation bar
+function filterSearch(){
+  if(isset($_POST['search'])){
+    $search=$_POST['searchbox'];
+    
+    global $db;
+
+    $searchquery = "SELECT * FROM product WHERE product_name LIKE '%{$search}%' OR manufacturer LIKE '%{$search}%'";
+    $searchquery_result = mysqli_query($db,$searchquery);
+
+    while($row = mysqli_fetch_assoc($searchquery_result)){
+      store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+    }
+  }
+}
 ?>
