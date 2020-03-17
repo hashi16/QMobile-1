@@ -678,6 +678,13 @@ function retrieveproductorder($productname,$productprice){
   global $db;
   $query_run = mysqli_query($db,$query);
 }
+//stock management after order
+function stockmanage($oid,$qty){
+  $newqty = $qty - 1;
+  $stock = "UPDATE product SET product_qty='$newqty' WHERE id='$oid'";
+  global $db;
+  $stock_result = mysqli_query($db,$stock);
+}
 
 
 //Filter price range

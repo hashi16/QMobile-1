@@ -25,6 +25,7 @@ if(isset($_GET['oid'])){
                 $orderquery_result = mysqli_query($db,$orderquery);
                 while($row = mysqli_fetch_assoc($orderquery_result)){
                     retrieveproductorder($row['product_name'],$row['product_price']);
+                    stockmanage($row['id'],$row['product_qty']);
                 }
                 unset($_SESSION['cart'][$key]);
                 echo "<script>alert('Product has been ordered..')</script>";
