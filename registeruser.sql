@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.14
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2020 at 06:08 PM
--- Server version: 5.6.17
--- PHP Version: 5.5.12
+-- Generation Time: Mar 18, 2020 at 01:49 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `registeruser`
@@ -26,13 +26,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
+CREATE TABLE `admin` (
   `username` varchar(255) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  PRIMARY KEY (`username`)
+  `password` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -40,7 +39,8 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`username`, `fname`, `lname`, `email`, `password`) VALUES
-('iniesta8', 'Dasith', 'Deelaka', 'deelakajagoda@gmail.com', '4849ef68cba71d52b56694cc2f88bb11');
+('iniesta8', 'Dasith', 'Deelaka', 'deelakajagoda@gmail.com', '4849ef68cba71d52b56694cc2f88bb11'),
+('farook', 'farook', 'fazni', 'farookfazni@gmail.com', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -48,7 +48,7 @@ INSERT INTO `admin` (`username`, `fname`, `lname`, `email`, `password`) VALUES
 -- Table structure for table `cart`
 --
 
-CREATE TABLE IF NOT EXISTS `cart` (
+CREATE TABLE `cart` (
   `productname` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
   `quantity` int(100) NOT NULL
@@ -60,12 +60,11 @@ CREATE TABLE IF NOT EXISTS `cart` (
 -- Table structure for table `deliveryboy`
 --
 
-CREATE TABLE IF NOT EXISTS `deliveryboy` (
+CREATE TABLE `deliveryboy` (
   `nic` varchar(255) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
-  `contactNo` varchar(255) NOT NULL,
-  PRIMARY KEY (`nic`)
+  `contactNo` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -74,7 +73,8 @@ CREATE TABLE IF NOT EXISTS `deliveryboy` (
 -- Table structure for table `feedback`
 --
 
-CREATE TABLE IF NOT EXISTS `feedback` (
+CREATE TABLE `feedback` (
+  `feed_id` int(11) NOT NULL,
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
   `contactno` varchar(20) NOT NULL,
@@ -83,20 +83,33 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `feedback` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`feed_id`, `firstname`, `lastname`, `contactno`, `email`, `subject`, `feedback`) VALUES
+(1, 'fazni', 'farook', '0779794020', 'faznifarook@gmail.com', 'Problem in Product', 'I need to replace my phone charger its not working properly but phone is great I used it by charging it from another charger help me to fix it ');
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `orders`
 --
 
-CREATE TABLE IF NOT EXISTS `orders` (
-  `orderId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `orders` (
+  `orderId` int(11) NOT NULL,
   `orderdate` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `orderName` varchar(255) NOT NULL,
-  `price` int(11) NOT NULL,
-  PRIMARY KEY (`orderId`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+  `price` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`orderId`, `orderdate`, `status`, `orderName`, `price`) VALUES
+(19, '2020-03-18', 'Paid', 'Hwaie P30 Lite', 45000);
 
 -- --------------------------------------------------------
 
@@ -104,13 +117,12 @@ CREATE TABLE IF NOT EXISTS `orders` (
 -- Table structure for table `payment`
 --
 
-CREATE TABLE IF NOT EXISTS `payment` (
-  `paymentId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `payment` (
+  `paymentId` int(11) NOT NULL,
   `amount` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL,
-  `method` varchar(255) NOT NULL,
-  PRIMARY KEY (`paymentId`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `method` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -118,8 +130,8 @@ CREATE TABLE IF NOT EXISTS `payment` (
 -- Table structure for table `product`
 --
 
-CREATE TABLE IF NOT EXISTS `product` (
-  `id` int(255) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `product` (
+  `id` int(255) NOT NULL,
   `product_name` varchar(255) NOT NULL,
   `manufacturer` varchar(255) NOT NULL,
   `product_category` varchar(100) NOT NULL,
@@ -127,9 +139,8 @@ CREATE TABLE IF NOT EXISTS `product` (
   `product_price` varchar(255) NOT NULL,
   `product_qty` int(255) NOT NULL,
   `product_image` varchar(255) NOT NULL,
-  `description` varchar(5000) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+  `description` varchar(5000) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
@@ -152,8 +163,8 @@ INSERT INTO `product` (`id`, `product_name`, `manufacturer`, `product_category`,
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
-  `Reg_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user` (
+  `Reg_ID` int(11) NOT NULL,
   `fname` varchar(100) NOT NULL,
   `lname` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
@@ -161,9 +172,8 @@ CREATE TABLE IF NOT EXISTS `user` (
   `contactNo` int(20) NOT NULL,
   `address` varchar(255) NOT NULL,
   `user_type` varchar(100) NOT NULL,
-  `password` varchar(100) NOT NULL,
-  PRIMARY KEY (`Reg_ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
@@ -174,6 +184,81 @@ INSERT INTO `user` (`Reg_ID`, `fname`, `lname`, `username`, `email`, `contactNo`
 (2, 'Dasith', 'Deelaka', 'deelaka', 'deelakajagoda@gmail.com', 778257254, 'NO 5/B2/11, IETI Quarters,Thelawala road Angulana, Mount Lavinia.\r\nColombo', 'user', 'f9104f7b975259fd53223fd4b3d5bf07'),
 (3, 'Andress', 'Iniesta', 'iniesta8', 'iniesta8@gmail.com', 112345678, 'Barcelona,Spain', 'user', '4849ef68cba71d52b56694cc2f88bb11');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `deliveryboy`
+--
+ALTER TABLE `deliveryboy`
+  ADD PRIMARY KEY (`nic`);
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`feed_id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`orderId`);
+
+--
+-- Indexes for table `payment`
+--
+ALTER TABLE `payment`
+  ADD PRIMARY KEY (`paymentId`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`Reg_ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `feed_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `orderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `payment`
+--
+ALTER TABLE `payment`
+  MODIFY `paymentId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `Reg_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

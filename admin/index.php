@@ -106,9 +106,14 @@
             </ul>
         </div>
         <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <?php 
+                            $db = mysqli_connect('localhost','root','','registeruser');
+                            $result = mysqli_query($db,"select * from feedback ORDER BY feed_id DESC Limit 1");
+                            $row = mysqli_fetch_row($result);        
+                        ?> 
+            <h5 class="card-title">Latest Feedback</h5>
+            <p class="card-text"><?php echo "<b>".$row[5]."</b>"; echo "<br>"; echo $row[6]; echo "<br>"; ?></p>
+            <a href="feedback.php" class="btn btn-primary">View Feedback</a>
         </div>
     </div><br>
     <!--Summary cards-->
@@ -182,87 +187,59 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <?php 
+                            $db = mysqli_connect('localhost','root','','registeruser');
+                            $result = mysqli_query($db,"select * from user ORDER BY Reg_ID DESC Limit 1");
+                            $row = mysqli_fetch_row($result);        
+                        ?> 
+                    <h5 class="card-title">Recently Registered Customer</h5>
+                    <p class="card-text"><?php echo "<b>Name: </b>" .$row[1]; echo "\t"; echo $row[2]; echo "<br>"; echo "<b>Contact No: </b>" .$row[5]; echo "<br>"; echo "<b>Email: </b>" .$row[4]; echo "<br>"; echo "<b>Address: </b>" .$row[6]; ?></p>
                 </div>
             </div>
         </div>
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <?php 
+                            $db = mysqli_connect('localhost','root','','registeruser');
+                            $result = mysqli_query($db,"select * from orders ORDER BY orderId DESC Limit 1");
+                            $row = mysqli_fetch_row($result);        
+                        ?> 
+                    <h5 class="card-title">Recent Order</h5>
+                    <p class="card-text"><?php echo "<b>Order Date: </b>" .$row[1]; echo "<br>"; echo "<b>Status: </b>" .$row[2]; echo "<br>"; echo "<b>Order Name: </b>" .$row[3]; echo "<br>"; echo "<b>Price: </b>" .$row[4]; ?></p>
+                    <a href="order.php" class="btn btn-primary">View Order</a>
                 </div>
             </div>
         </div>
     </div><br>
     <div class="card-columns">
         <div class="card">
-            <img src="..." class="card-img-top" alt="...">
+                        <?php 
+                            $db = mysqli_connect('localhost','root','','registeruser');
+                            $result = mysqli_query($db,"select * from product ORDER BY id DESC Limit 1");
+                            $row = mysqli_fetch_row($result);        
+                        ?> 
+            <img src=<?php echo $row[7]; ?> class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title">Card title that wraps to a new line</h5>
-                <p class="card-text">This is a longer card with supporting text below 
-                    as a natural lead-in to additional content. This content is a little bit longer.
+                <h5 class="card-title">Recently Added Product</h5>
+                <p class="card-text"><?php echo "<b>Product Name: </b>" .$row[1]; echo "<br>"; echo "<b>Manufacture: </b>" .$row[2]; echo "<br>";
+                 echo "<b>Price: </b>" .$row[5]; echo "<br>"; echo "<b>Quantity: </b>" .$row[6]; ?>
                 </p>
             </div>
         </div>
-        <div class="card p-3">
-            <blockquote class="blockquote mb-0 card-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">
-                    <small class="text-muted">
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card bg-primary text-white text-center p-3">
-            <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                <footer class="blockquote-footer text-white">
-                    <small>
-                        Someone famous in <cite title="Source Title">Source Title</cite>
-                    </small>
-                </footer>
-            </blockquote>
-        </div>
-        <div class="card text-center">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-        </div>
-        <div class="card p-3 text-right">
-          <blockquote class="blockquote mb-0">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-              <footer class="blockquote-footer">
-                  <small class="text-muted">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
-                  </small>
-              </footer>
-            </blockquote>
-        </div>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <?php 
+                            $db = mysqli_connect('localhost','root','','registeruser');
+                            $result = mysqli_query($db,"select * from payment ORDER BY paymentId DESC Limit 1");
+                            $row = mysqli_fetch_row($result);        
+                        ?>
+                <h5 class="card-title">Recently Made payment</h5>
+                <p class="card-text"><?php echo "<b>amount: </b>" .$row[1]; echo "<br>"; echo "<b>Date: </b>" .$row[2]; echo "<br>";
+                 echo "<b>Method: </b>" .$row[3]; ?></p>
+                
             </div>
-        </div>
+        </div> 
     </div>
     
     <!---javaScript cdn----->
