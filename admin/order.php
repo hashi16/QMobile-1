@@ -108,7 +108,7 @@
             <tr>
                 <th scope="col">Order ID</th>
                 <th scope="col">Order Date</th>
-                <th scope="col">Status</th>
+                <th scope="col">Customer Username</th>
                 <th scope="col">Order description</th>
                 <th scope="col">Price</th>
             </tr>

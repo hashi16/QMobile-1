@@ -304,18 +304,18 @@ if (isset($_GET['logout'])) {
 
      //Get order details from database
     function getOrderDetails(){
+      $user = $_SESSION['user']['username'];
       global $db;
-      $order = "SELECT * FROM orders";
+      $order = "SELECT * FROM orders  WHERE customer='$user'";
       $order_result = mysqli_query($db,$order);
       while($row = mysqli_fetch_assoc($order_result)){
-          orderdetails($row['orderId'],$row['orderdate'],$row['status'],$row['orderName'],$row['price']);
+          orderdetails($row['orderId'],$row['orderdate'],$row['orderName'],$row['price']);
       }
     } 
-    function orderdetails($orderId,$orderdate,$status,$orderName,$price){
+    function orderdetails($orderId,$orderdate,$orderName,$price){
         echo "<tr>";
             echo "<td>$orderId</td>";
             echo "<td>$orderdate</td>";
-            echo "<td>$status</td>";
             echo "<td>$orderName</td>";
             echo "<td>$price</td>";
         echo "</tr>";
@@ -674,8 +674,9 @@ if (isset($_GET['logout'])) {
 
 //insert order details into database
 function retrieveproductorder($productname,$productprice){
+  $user = $_SESSION['user']['username'];
   $date = date("Y-m-d");
-  $query = "INSERT INTO orders(orderdate,status,orderName,price) VALUES('$date','Processing','$productname','$productprice')";
+  $query = "INSERT INTO orders(orderdate,customer,orderName,price) VALUES('$date','$user','$productname','$productprice')";
   global $db;
   $query_run = mysqli_query($db,$query);
 }

@@ -109,14 +109,14 @@
         $order = "SELECT * FROM orders";
         $order_result = mysqli_query($db,$order);
         while($row = mysqli_fetch_assoc($order_result)){
-            orderdetails($row['orderId'],$row['orderdate'],$row['status'],$row['orderName'],$row['price']);
+            orderdetails($row['orderId'],$row['orderdate'],$row['customer'],$row['orderName'],$row['price']);
         }
     }
-    function orderdetails($orderId,$orderdate,$status,$orderName,$price){
+    function orderdetails($orderId,$orderdate,$customer,$orderName,$price){
         echo "<tr>";
             echo "<td>$orderId</td>";
             echo "<td>$orderdate</td>";
-            echo "<td>$status</td>";
+            echo "<td>$customer</td>";
             echo "<td>$orderName</td>";
             echo "<td>$price</td>";
         echo "</tr>";
