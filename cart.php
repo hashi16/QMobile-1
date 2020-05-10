@@ -145,7 +145,7 @@ if(isset($_GET['oid'])){
                             foreach($product_id as $id){
                                 if($row['id'] == $id){
                                     cartElement($row['product_image'],$row['product_name'],$row['product_price'],$row['product_qty'],$row['id']);
-                                        $total = $total+$row['product_price']*$row['product_qty'];
+                                        $total = $total+$row['product_price']*1;
                                 }
                             }
                             }
@@ -185,7 +185,7 @@ if(isset($_GET['oid'])){
                                             <tr>
                                                 <td>
                                                     <div class="bg-success">
-                                                        <h6>Rs <?php echo number_format($total/100,2);?></h6>
+                                                        <h6>Rs <?php echo number_format($total,2);?></h6>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -198,7 +198,7 @@ if(isset($_GET['oid'])){
                                             <tr>
                                                 <td>
                                                     <div class="bg-success">
-                                                        <h6>Rs <?php echo number_format($total/100,2); ?></h6>
+                                                        <h6>Rs <?php echo number_format($total,2); ?></h6>
                                                     </div>
                                                 </td>
                                             </tr>
