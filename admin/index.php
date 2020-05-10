@@ -135,7 +135,8 @@ error_reporting(0);
                     <div class="col-12 col-sm-8 align-self-center">
                         <?php 
                             $db = mysqli_connect('localhost','root','','registeruser');
-                            $result = mysqli_query($db,"select count(1) FROM orders");
+                            $date = date("Y-m-d");
+                            $result = mysqli_query($db,"select count(1) FROM orders where orderdate='$date'");
                             $row = mysqli_fetch_array($result);
                             $total = $row[0];
                         ?>
