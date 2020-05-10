@@ -674,7 +674,8 @@ if (isset($_GET['logout'])) {
 
 //insert order details into database
 function retrieveproductorder($productname,$productprice){
-  $query = "INSERT INTO orders(orderdate,status,orderName,price) VALUES('2020-03-12','Processing','$productname','$productprice')";
+  $date = date("Y-m-d");
+  $query = "INSERT INTO orders(orderdate,status,orderName,price) VALUES('$date','Processing','$productname','$productprice')";
   global $db;
   $query_run = mysqli_query($db,$query);
 }
