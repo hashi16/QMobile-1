@@ -1,7 +1,7 @@
 <?php
-include('dbconnection.php');
-//require_once('dbconnection.php') ;
-session_start();
+    include('dbconnection.php');
+    $db = mysqli_connect('localhost','root','','registeruser');
+    session_start();
 
     if (!isLoggedIn()) {
         $_SESSION['msg'] = "You must log in first";
@@ -42,17 +42,17 @@ session_start();
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="./index.php" class="nav-link ">
+                    <a href="./index.php" class="nav-link" >
                         <i class="fas fa-chart-bar"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                             <i class="fab fa-product-hunt"></i> Products
                         </a>
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item active"> Add Product</a>
+                            <a href="addproduct.php" class="dropdown-item"> Add Product</a>
                             <a href="myproducts.php" class="dropdown-item"> My Products</a>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ session_start();
                             <i class="fas fa-shopping-bag fa-lg"></i> Orders
                         </a>
                         <div class="dropdown-menu">
-                            <a href="order.php" class="dropdown-item"> Orders Overview</a>
+                            <a href="order.php" class="dropdown-item active"> Orders Overview</a>
                             <a href="feedback.php" class="dropdown-item"> Manage Feedback</a>
                         </div>
                     </div>
@@ -99,83 +99,28 @@ session_start();
 
     <!----text-white-py------------->
     <div class="text-white py-3" style="background-color: teal;">
-        <h1>&nbsp;&nbsp;Add Product</h1>
+        <h1>&nbsp;&nbsp;<span class="fas fa-users fa-lg"></span> Registered Customers</h1>
     </div><br>
 
-    <!----Card---->
-    <div class="card card-body">
-        <form action="dbconnection.php" method="post" enctype="multipart/form-data">
-            <h4 class="card-header">What You're Selling</h4><br>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="productName" class="col-sm-2 col-form-label">Product Name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="productName" id="productName" required>
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="manufacturer" class="col-sm-2 col-form-label">Manufacturer</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="manufacturer" id="manufacturer" required>
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="category" class="col-sm-2 col-form-label">Category</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="category" id="category" required>
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="actualprice" class="col-sm-2 col-form-label">Actual Price</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="actualprice" id="actualprice">
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="sellingprice" class="col-sm-2 col-form-label">Selling Price</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="sellingprice" id="sellingprice" required>
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
-                    <div class="col-sm-10">
-                        <input type="number" class="form-control" name="quantity" id="quantity" required>
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Description</label>
-                    <div class="col-sm-10">
-                        <textarea class="form-control" name="description" id="description" rows="4"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
-                    <label for="importimg" class="col-sm-2 col-form-label">Import Image</label>
-                    <div class="col-sm-10">
-                        <div class="custom-file">
-                            <input type="file" id="image" name="image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <input type="submit" class="btn btn-primary ml-auto" id="upload" name="upload" value="Submit">
-        </form>
-    </div>
-    
+    <!----Table----->
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Reg. ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contact No.</th>
+                <th scope="col">Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                getCustomerDetails();
+            ?>
+        </tbody>
+    </table>
+
 <!---javaScript cdn----->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

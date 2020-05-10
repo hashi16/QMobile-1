@@ -122,6 +122,26 @@
         echo "</tr>";
     }
 
+    //Get customer details from database
+    function getCustomerDetails(){
+      global $db;
+      $user = "SELECT * FROM user";
+      $user_result = mysqli_query($db,$user);
+      while($row = mysqli_fetch_assoc($user_result)){
+        customerdetails($row['Reg_ID'],$row['fname'],$row['lname'],$row['username'],$row['email'],$row['contactNo'],$row['address']);
+      }
+  }
+  function customerdetails($Reg_ID,$fname,$lname,$username,$email,$contactNo,$address){
+      echo "<tr>";
+          echo "<td>$Reg_ID</td>";
+          echo "<td>$fname&nbsp$lname</td>";
+          echo "<td>$username</td>";
+          echo "<td>$email</td>";
+          echo "<td>$contactNo</td>";
+          echo "<td>$address</td>";
+      echo "</tr>";
+  }
+
     
     //Get feedback details from database
     function getFeedbackDetails(){

@@ -68,6 +68,11 @@ error_reporting(0);
                         </div>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a href="./customer.php" class="nav-link" >
+                        <i class="fas fa-users"></i> Customers
+                    </a>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -134,7 +139,11 @@ error_reporting(0);
                             $row = mysqli_fetch_array($result);
                             $total = $row[0];
                         ?>
-                        <h4><b>Today Orders</b></h4>
+                        <a href="order.php">
+                            <h4 class="text-dark">
+                                <b>Today Orders</b>
+                            </h4>
+                        </a>
                         <h4 class="text-muted"><?php echo $total; ?></h4>
                     </div>
                 </div>
@@ -155,7 +164,11 @@ error_reporting(0);
                             $row = mysqli_fetch_array($result);
                             $total = $row[0];
                         ?>
-                        <h4><b>Customers</b></h4>
+                        <a href="customer.php">
+                            <h4 class="text-dark">
+                                <b>Customers</b>
+                            </h4>
+                        </a>
                         <h4 class="text-muted"><?php echo $total; ?></h4>
                     </div>
                 </div>
@@ -176,7 +189,11 @@ error_reporting(0);
                             $row = mysqli_fetch_array($result);
                             $total = $row[0];
                         ?>
-                        <h4><b>Feedbacks</b></h4>
+                        <a href="feedback.php">
+                            <h4 class="text-dark">
+                                <b>Feedbacks</b>
+                            </h4>
+                        </a>
                         <h4 class="text-muted"><?php echo $total; ?></h4>
                     </div>
                 </div>

@@ -62,11 +62,16 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                             <i class="fas fa-shopping-bag fa-lg"></i> Orders
                         </a>
-                    <div class="dropdown-menu">
-                        <a href="order.php" class="dropdown-item"> Orders Overview</a>
-                        <a href="feedback.php" class="dropdown-item"> Manage Feedback</a>
+                        <div class="dropdown-menu">
+                            <a href="order.php" class="dropdown-item"> Orders Overview</a>
+                            <a href="feedback.php" class="dropdown-item"> Manage Feedback</a>
+                        </div>
                     </div>
-                </div>
+                </li>
+                <li class="nav-item">
+                    <a href="./customer.php" class="nav-link" >
+                        <i class="fas fa-users"></i> Customers
+                    </a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
