@@ -100,16 +100,8 @@
     </nav>
 
     <!----text-white-py------------->
-    <div class="row text-white py-3" style="background-color: teal;">
-        <div class="col-md-6" >
-            <h1>&nbsp;&nbsp;My Products</h1>
-        </div>
-        <div class="col-md-6" >
-        <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filtersearch.php">
-            <input class="form-control mr-sm-2" name="searchbox" type="search" placeholder="Enter name or brand" aria-label="Search" Required>
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="search">Search</button>
-        </form>
-        </div>
+    <div class="text-white py-3" style="background-color: teal;">
+        <h1>&nbsp;&nbsp;My Products</h1>
     </div><br>
 
     <!--Store-->
@@ -137,18 +129,18 @@
         </div>
         <div class="col-md-9">
             <!--Filter price range-->
-            <div class="row">
+            <!-- <div class="row ju">
                 <div class="col-12">
                     <div class="card card-body bg-light">
-                        <form class="form-inline" method="post" enctype="multipart/form-data" action="filterprice.php">
+                        <form class="form-inline justify-content-center" method="post" enctype="multipart/form-data">
                             <label for="">Price Range: &nbsp;</label>
                             <div class="form-group">
-                                <label for="minPrice">Min (Rs:) &nbsp;</label>
-                                <input type="text" class="form-control" name="minPrice" pattern="[0-9]*" Required>
+                                <label for="">Min (Rs:) &nbsp;</label>
+                                <input type="text" class="form-control" name="minPrice" pattern="[0-9]*">
                             </div>
                             <div class="form-group">
-                                <label for="maxPrice">&nbsp; Max (Rs:)  &nbsp;</label>
-                                <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*" Required> &nbsp; &nbsp;
+                                <label for="">&nbsp; Max (Rs:)  &nbsp;</label>
+                                <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*"> &nbsp; &nbsp;
                             </div>
                             <div class="form-group text-center">
                                 <input type="submit" value="Sort" name="priceSort" class="btn btn-success">
@@ -156,11 +148,11 @@
                         </form>
                     </div><br>
                 </div>
-            </div>
+            </div> -->
             <!--Store Products-->
             <div class="row">
                 <?php
-                    getProduct();
+                    filterSearch();
                 ?>
             </div><br>
         </div>
