@@ -406,4 +406,20 @@ function filterUser(){
     }
   }
 }
+
+//search orders by username or item
+function filterOrder(){
+  if(isset($_POST['searchorder'])){
+    $searchorder=$_POST['searchboxorder'];
+    
+    global $db;
+
+    $searchquery = "SELECT * FROM orders WHERE customer LIKE '%{$searchorder}%' OR orderName LIKE '%{$searchorder}%'";
+    $searchquery_result = mysqli_query($db,$searchquery);
+
+    while($row = mysqli_fetch_assoc($searchquery_result)){
+      orderdetails($row['orderId'],$row['orderdate'],$row['customer'],$row['orderName'],$row['price']);
+    }
+  }
+}
 ?>

@@ -105,10 +105,10 @@
             <h1>&nbsp;&nbsp;My Products</h1>
         </div>
         <div class="col-md-6" >
-        <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filtersearch.php">
-            <input class="form-control mr-sm-2" name="searchbox" type="search" placeholder="Enter name or brand" aria-label="Search" Required>
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="search">Search</button>
-        </form>
+            <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filtersearch.php">
+                <input class="form-control mr-sm-2" name="searchbox" type="search" placeholder="Enter name or brand" aria-label="Search" Required>
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="search">Search</button>
+            </form>
         </div>
     </div><br>
 

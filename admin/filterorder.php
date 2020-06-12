@@ -102,12 +102,12 @@
         <div class="col-md-6" >
             <h1>&nbsp;&nbsp;<span class="fas fa-shopping-bag fa-lg"></span> Orders Overview</h1>
         </div>
-        <div class="col-md-6" >
-            <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filterorder.php">
+        <!-- <div class="col-md-6" >
+            <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filtersearch.php">
                 <input size="25" class="form-control mr-sm-2" name="searchboxorder" type="search" placeholder="Enter username or item" aria-label="Search" Required>
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="searchorder">Search</button>
             </form>
-        </div>
+        </div> -->
     </div><br>
 
     <!----Table----->
@@ -123,7 +123,7 @@
         </thead>
         <tbody>
             <?php
-                getOrderDetails();
+                filterOrder();
             ?>
         </tbody>
     </table>
