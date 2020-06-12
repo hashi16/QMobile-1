@@ -102,12 +102,12 @@
         <div class="col-md-6" >
             <h1>&nbsp;&nbsp;<span class="fas fa-users fa-lg"></span> Registered Customers</h1>
         </div>
-        <div class="col-md-6" >
+        <!-- <div class="col-md-6" >
             <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filteruser.php">
                 <input size="25" class="form-control mr-sm-2" name="searchboxuser" type="search" placeholder="Enter name or username" aria-label="Search" Required>
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="searchuser">Search</button>
             </form>
-        </div>
+        </div> -->
     </div><br>
 
     <!----Table----->
@@ -124,7 +124,7 @@
         </thead>
         <tbody>
             <?php
-                getCustomerDetails();
+                filterUser();
             ?>
         </tbody>
     </table>

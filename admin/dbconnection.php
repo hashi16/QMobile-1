@@ -375,7 +375,7 @@ function filterPrice(){
   }
 }
 
-//search box
+//search box in product
 function filterSearch(){
   if(isset($_POST['search'])){
     $search=$_POST['searchbox'];
@@ -387,6 +387,22 @@ function filterSearch(){
 
     while($row = mysqli_fetch_assoc($searchquery_result)){
       store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+    }
+  }
+}
+
+//search box in user
+function filterUser(){
+  if(isset($_POST['searchuser'])){
+    $searchuser=$_POST['searchboxuser'];
+    
+    global $db;
+
+    $searchquery = "SELECT * FROM user WHERE username LIKE '%{$searchuser}%' OR fname LIKE '%{$searchuser}%' OR lname LIKE '%{$searchuser}%'";
+    $searchquery_result = mysqli_query($db,$searchquery);
+
+    while($row = mysqli_fetch_assoc($searchquery_result)){
+      customerdetails($row['Reg_ID'],$row['fname'],$row['lname'],$row['username'],$row['email'],$row['contactNo'],$row['address']);
     }
   }
 }
