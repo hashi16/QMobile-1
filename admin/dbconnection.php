@@ -106,7 +106,7 @@
     //Get order details from database
     function getOrderDetails(){
         global $db;
-        $order = "SELECT * FROM orders";
+        $order = "SELECT * FROM orders ORDER BY orderId DESC";
         $order_result = mysqli_query($db,$order);
         while($row = mysqli_fetch_assoc($order_result)){
             orderdetails($row['orderId'],$row['orderdate'],$row['customer'],$row['orderName'],$row['price']);
@@ -146,7 +146,7 @@
     //Get feedback details from database
     function getFeedbackDetails(){
         global $db;
-        $feedback = "SELECT * FROM feedback";
+        $feedback = "SELECT * FROM feedback ORDER BY feed_id DESC";
         $feedback_result = mysqli_query($db,$feedback);
         while($row = mysqli_fetch_assoc($feedback_result)){
             feedbackdetails($row['firstname'],$row['lastname'],$row['contactno'],$row['email'],$row['subject'],$row['feedback']);
