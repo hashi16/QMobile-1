@@ -428,7 +428,7 @@ if (isset($_GET['logout'])) {
   //get products from database to store page
   function getProduct(){
     global $db;
-    $sql = "SELECT * FROM product";
+    $sql = "SELECT * FROM product WHERE product_qty>0";
 
     $result = mysqli_query($db,$sql);
 
@@ -443,7 +443,7 @@ if (isset($_GET['logout'])) {
   //get mobile phone from database to mobile phone page
   function getMobilePhone(){
     global $db;
-    $mobilephone = "SELECT * FROM product WHERE product_category='Mobile Phone'";
+    $mobilephone = "SELECT * FROM product WHERE (product_category='Mobile Phone' AND product_qty>0)";
 
     $mobilephoneresult = mysqli_query($db,$mobilephone);
 
@@ -458,7 +458,7 @@ if (isset($_GET['logout'])) {
   //get backcovers from database to back cover page
   function getBackCover(){
     global $db;
-    $backcover = "SELECT * FROM product WHERE product_category='Back Cover'";
+    $backcover = "SELECT * FROM product WHERE (product_category='Back Cover' AND product_qty>0)";
 
     $backcoverresult = mysqli_query($db,$backcover);
 
@@ -473,7 +473,7 @@ if (isset($_GET['logout'])) {
   //get handfree from database to handfree page
   function getHandfree(){
     global $db;
-    $handfree = "SELECT * FROM product WHERE product_category='Handfree'";
+    $handfree = "SELECT * FROM product WHERE (product_category='Handfree' AND product_qty>0)";
 
     $handfreeresult = mysqli_query($db,$handfree);
 
@@ -488,7 +488,7 @@ if (isset($_GET['logout'])) {
   //get charger from database to charger page
   function getCharger(){
     global $db;
-    $charger = "SELECT * FROM product WHERE product_category='Charger'";
+    $charger = "SELECT * FROM product WHERE (product_category='Charger' AND product_qty>0)";
 
     $chargerresult = mysqli_query($db,$charger);
 
@@ -503,7 +503,7 @@ if (isset($_GET['logout'])) {
   //get battery from database to battery page
   function getBattery(){
     global $db;
-    $battery = "SELECT * FROM product WHERE product_category='Battery'";
+    $battery = "SELECT * FROM product WHERE (product_category='Battery' AND product_qty>0)";
 
     $batteryresult = mysqli_query($db,$battery);
 
@@ -518,7 +518,7 @@ if (isset($_GET['logout'])) {
   //get tempered from database to tempered page
   function getTempered(){
     global $db;
-    $tempered = "SELECT * FROM product WHERE product_category='Tempered'";
+    $tempered = "SELECT * FROM product WHERE (product_category='Tempered' AND product_qty>0)";
 
     $temperedresult = mysqli_query($db,$tempered);
 
@@ -548,7 +548,7 @@ if (isset($_GET['logout'])) {
   //get xiaomi from database to xiaomi page
   function getXiaomi(){
     global $db;
-    $xiaomi = "SELECT * FROM product WHERE manufacturer='Xiaomi'";
+    $xiaomi = "SELECT * FROM product WHERE (manufacturer='Xiaomi' AND product_qty>0)";
 
     $xiaomiresult = mysqli_query($db,$xiaomi);
 
@@ -563,7 +563,7 @@ if (isset($_GET['logout'])) {
   //get google from database to google page
   function getGoogle(){
     global $db;
-    $google = "SELECT * FROM product WHERE manufacturer='Google'";
+    $google = "SELECT * FROM product WHERE (manufacturer='Google' AND product_qty>0)";
 
     $googleresult = mysqli_query($db,$google);
 
@@ -578,7 +578,7 @@ if (isset($_GET['logout'])) {
   //get nokia from database to nokia page
   function getNokia(){
     global $db;
-    $nokia = "SELECT * FROM product WHERE manufacturer='Nokia'";
+    $nokia = "SELECT * FROM product WHERE (manufacturer='Nokia' AND product_qty>0)";
 
     $nokiaresult = mysqli_query($db,$nokia);
 
@@ -593,7 +593,7 @@ if (isset($_GET['logout'])) {
   //get oppo from database to oppo page
   function getOppo(){
     global $db;
-    $oppo = "SELECT * FROM product WHERE manufacturer='Oppo'";
+    $oppo = "SELECT * FROM product WHERE (manufacturer='Oppo' AND product_qty>0)";
 
     $opporesult = mysqli_query($db,$oppo);
 
@@ -608,7 +608,7 @@ if (isset($_GET['logout'])) {
   //get apple from database to apple page
   function getApple(){
     global $db;
-    $apple = "SELECT * FROM product WHERE manufacturer='Apple'";
+    $apple = "SELECT * FROM product WHERE (manufacturer='Apple' AND product_qty>0)";
 
     $appleresult = mysqli_query($db,$apple);
 
@@ -623,7 +623,7 @@ if (isset($_GET['logout'])) {
   //get samsung from database to samsung page
   function getSamsung(){
     global $db;
-    $samsung = "SELECT * FROM product WHERE manufacturer='Samsung'";
+    $samsung = "SELECT * FROM product WHERE (manufacturer='Samsung' AND product_qty>0)";
 
     $samsungresult = mysqli_query($db,$samsung);
 
@@ -639,7 +639,7 @@ if (isset($_GET['logout'])) {
   function getProductIndex(){
     global $db;
     //$sql = "SELECT * FROM product";
-    $sql = "SELECT * FROM (SELECT * FROM product ORDER BY id DESC LIMIT 8)Var1 ORDER BY id DESC";
+    $sql = "SELECT * FROM (SELECT * FROM product WHERE product_qty>0 ORDER BY id DESC LIMIT 8)Var1 ORDER BY id DESC";
 
     $result = mysqli_query($db,$sql);
 
