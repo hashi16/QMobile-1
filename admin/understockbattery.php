@@ -106,10 +106,10 @@
             <h1>&nbsp;&nbsp;Understocking</h1>
         </div>
         <div class="col-md-6" >
-            <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filtersearch.php">
+            <!-- <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filtersearch.php">
                 <input class="form-control mr-sm-2" name="searchbox" type="search" placeholder="Enter name or brand" aria-label="Search" Required>
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="search">Search</button>
-            </form>
+            </form> -->
         </div>
     </div><br>
 
@@ -138,7 +138,7 @@
         </div>
         <div class="col-md-9">
             <!--Filter price range-->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-12">
                     <div class="card card-body bg-light">
                         <form class="form-inline" method="post" enctype="multipart/form-data" action="filterprice.php">
@@ -157,11 +157,11 @@
                         </form>
                     </div><br>
                 </div>
-            </div>
+            </div> -->
             <!--Store Products-->
             <div class="row">
                 <?php
-                    getUnderstockingProduct();
+                    getUnderstockingBattery();
                 ?>
             </div><br>
         </div>

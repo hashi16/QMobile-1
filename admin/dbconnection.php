@@ -175,7 +175,7 @@
     }
 
 
-      //get mobile phone from database to mobile phone page
+  //get mobile phone from database to mobile phone page
   function getMobilePhone(){
     global $db;
     $mobilephone = "SELECT * FROM product WHERE product_category='Mobile Phone'";
@@ -359,6 +359,201 @@
   function getSamsung(){
     global $db;
     $samsung = "SELECT * FROM product WHERE manufacturer='Samsung'";
+
+    $samsungresult = mysqli_query($db,$samsung);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($samsungresult)){
+        samsung($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get mobile phone from database to mobile phone page
+  function getUnderstockingMobilePhone(){
+    global $db;
+    $mobilephone = "SELECT * FROM product WHERE (product_category='Mobile Phone' AND product_qty<=10)";
+
+    $mobilephoneresult = mysqli_query($db,$mobilephone);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($mobilephoneresult)){
+        mobilephone($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get backcovers from database to back cover page
+  function getUnderstockingBackCover(){
+    global $db;
+    $backcover = "SELECT * FROM product WHERE (product_category='Back Cover' AND product_qty<=10)";
+
+    $backcoverresult = mysqli_query($db,$backcover);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($backcoverresult)){
+        backcover($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get handfree from database to handfree page
+  function getUnderstockingHandfree(){
+    global $db;
+    $handfree = "SELECT * FROM product WHERE (product_category='Handfree' AND product_qty<=10)";
+
+    $handfreeresult = mysqli_query($db,$handfree);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($handfreeresult)){
+        handfree($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get charger from database to charger page
+  function getUnderstockingCharger(){
+    global $db;
+    $charger = "SELECT * FROM product WHERE (product_category='Charger' AND product_qty<=10)";
+
+    $chargerresult = mysqli_query($db,$charger);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($chargerresult)){
+        charger($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get battery from database to battery page
+  function getUnderstockingBattery(){
+    global $db;
+    $battery = "SELECT * FROM product WHERE (product_category='Battery' AND product_qty<=10)";
+
+    $batteryresult = mysqli_query($db,$battery);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($batteryresult)){
+        battery($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get tempered from database to tempered page
+  function getUnderstockingTempered(){
+    global $db;
+    $tempered = "SELECT * FROM product WHERE (product_category='Tempered' AND product_qty<=10)";
+
+    $temperedresult = mysqli_query($db,$tempered);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($temperedresult)){
+        tempered($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get huawei from database to huawei page
+  function getUnderstockingHuawei(){
+    global $db;
+    $huawei = "SELECT * FROM product WHERE (manufacturer='Huawei' AND product_qty<=10)";
+
+    $huaweiresult = mysqli_query($db,$huawei);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($huaweiresult)){
+        huawei($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get xiaomi from database to xiaomi page
+  function getUnderstockingXiaomi(){
+    global $db;
+    $xiaomi = "SELECT * FROM product WHERE (manufacturer='Xiaomi' AND product_qty<=10)";
+
+    $xiaomiresult = mysqli_query($db,$xiaomi);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($xiaomiresult)){
+        xiaomi($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get google from database to google page
+  function getUnderstockingGoogle(){
+    global $db;
+    $google = "SELECT * FROM product WHERE (manufacturer='Google' AND product_qty<=10)";
+
+    $googleresult = mysqli_query($db,$google);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($googleresult)){
+        google($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get nokia from database to nokia page
+  function getUnderstockingNokia(){
+    global $db;
+    $nokia = "SELECT * FROM product WHERE (manufacturer='Nokia' AND product_qty<=10)";
+
+    $nokiaresult = mysqli_query($db,$nokia);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($nokiaresult)){
+        nokia($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get oppo from database to oppo page
+  function getUnderstockingOppo(){
+    global $db;
+    $oppo = "SELECT * FROM product WHERE (manufacturer='Oppo' AND product_qty<=10)";
+
+    $opporesult = mysqli_query($db,$oppo);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($opporesult)){
+        oppo($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get apple from database to apple page
+  function getUnderstockingApple(){
+    global $db;
+    $apple = "SELECT * FROM product WHERE (manufacturer='Apple' AND product_qty<=10)";
+
+    $appleresult = mysqli_query($db,$apple);
+
+    // if(mysqli_num_rows($result)>0){
+    //   return $result;
+
+      while($row = mysqli_fetch_assoc($appleresult)){
+        apple($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+  }
+  }
+
+  //get samsung from database to samsung page
+  function getUnderstockingSamsung(){
+    global $db;
+    $samsung = "SELECT * FROM product WHERE (manufacturer='Samsung' AND product_qty<=10)";
 
     $samsungresult = mysqli_query($db,$samsung);
 
