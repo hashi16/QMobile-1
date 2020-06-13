@@ -582,6 +582,23 @@ function filterPrice(){
   }
 }
 
+//Filter understocking price range
+function filterUnderstockingPrice(){
+  if(isset($_POST['understockPriceSort'])){
+    $minprice=$_POST['minUnderstockPrice'];
+    $maxprice=$_POST['maxUnderstockPrice'];
+    
+    global $db;
+  
+    $filterprice = "SELECT * FROM product WHERE product_price BETWEEN $minprice AND $maxprice AND product_qty<=10";
+    $filterprice_result = mysqli_query($db,$filterprice);
+  
+    while($row = mysqli_fetch_assoc($filterprice_result)){
+      store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+    }
+  }
+}
+
 //search box in product
 function filterSearch(){
   if(isset($_POST['search'])){
@@ -598,7 +615,7 @@ function filterSearch(){
   }
 }
 
-//search box in product
+//search box in understocking product
 function filterUnderstockingSearch(){
   if(isset($_POST['searchunderstock'])){
     $searchunderstock=$_POST['searchboxunderstock'];
