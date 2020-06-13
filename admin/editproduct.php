@@ -54,6 +54,7 @@
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item"> Add Product</a>
                             <a href="myproducts.php" class="dropdown-item"> My Products</a>
+                            <a href="understock.php" class="dropdown-item"> Understock</a>
                         </div>
                     </div>
                 </li>

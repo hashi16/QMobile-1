@@ -76,6 +76,18 @@
         }
     }
 
+    //get understock from database
+    function getUnderstockingProduct(){
+      global $db;
+      $sql = "SELECT * FROM product WHERE product_qty<=10";
+      $result = mysqli_query($db,$sql);
+      // if(mysqli_num_rows($result)>0){
+      //   return $result;
+      while($row = mysqli_fetch_assoc($result)){
+          store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+      }
+  }
+
 
     //delete products from database
     if(isset($_GET['id'])){

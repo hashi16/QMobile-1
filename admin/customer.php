@@ -54,6 +54,7 @@
                         <div class="dropdown-menu">
                             <a href="addproduct.php" class="dropdown-item"> Add Product</a>
                             <a href="myproducts.php" class="dropdown-item"> My Products</a>
+                            <a href="understock.php" class="dropdown-item"> Understock</a>
                         </div>
                     </div>
                 </li>
@@ -63,7 +64,7 @@
                             <i class="fas fa-shopping-bag fa-lg"></i> Orders
                         </a>
                         <div class="dropdown-menu">
-                            <a href="order.php" class="dropdown-item active"> Orders Overview</a>
+                            <a href="order.php" class="dropdown-item"> Orders Overview</a>
                             <a href="feedback.php" class="dropdown-item"> Manage Feedback</a>
                         </div>
                     </div>

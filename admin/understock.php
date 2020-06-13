@@ -55,8 +55,8 @@
                         </a>
                         <div class="dropdown-menu">
                             <a href="addproduct.php" class="dropdown-item"> Add Product</a>
-                            <a href="myproducts.php" class="dropdown-item active"> My Products</a>
-                            <a href="understock.php" class="dropdown-item"> Understock</a>
+                            <a href="myproducts.php" class="dropdown-item"> My Products</a>
+                            <a href="understock.php" class="dropdown-item active"> Understock</a>
                         </div>
                     </div>
                 </li>
@@ -101,8 +101,16 @@
     </nav>
 
     <!----text-white-py------------->
-    <div class="text-white py-3" style="background-color: teal;">
-        <h1>&nbsp;&nbsp;My Products</h1>
+    <div class="row text-white py-3" style="background-color: teal;">
+        <div class="col-md-6" >
+            <h1>&nbsp;&nbsp;Understocking</h1>
+        </div>
+        <div class="col-md-6" >
+            <form class="form-inline my-2 my-lg-0" method="post" enctype="multipart/form-data" action="filtersearch.php">
+                <input class="form-control mr-sm-2" name="searchbox" type="search" placeholder="Enter name or brand" aria-label="Search" Required>
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit" name="search">Search</button>
+            </form>
+        </div>
     </div><br>
 
     <!--Store-->
@@ -126,22 +134,22 @@
                 <a href="tempered.php" class="list-group-item list-group-item-action bg-light">Tempered Glass</a>
                 <a href="backcover.php" class="list-group-item list-group-item-action bg-light">Back Cover</a>
                 <a href="battery.php" class="list-group-item list-group-item-action bg-light">Battery</a><br>
-            </div>
+              </div>
         </div>
         <div class="col-md-9">
             <!--Filter price range-->
-            <!-- <div class="row ju">
+            <div class="row">
                 <div class="col-12">
                     <div class="card card-body bg-light">
-                        <form class="form-inline justify-content-center" method="post" enctype="multipart/form-data">
+                        <form class="form-inline" method="post" enctype="multipart/form-data" action="filterprice.php">
                             <label for="">Price Range: &nbsp;</label>
                             <div class="form-group">
-                                <label for="">Min (Rs:) &nbsp;</label>
-                                <input type="text" class="form-control" name="minPrice" pattern="[0-9]*">
+                                <label for="minPrice">Min (Rs:) &nbsp;</label>
+                                <input type="text" class="form-control" name="minPrice" pattern="[0-9]*" Required>
                             </div>
                             <div class="form-group">
-                                <label for="">&nbsp; Max (Rs:)  &nbsp;</label>
-                                <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*"> &nbsp; &nbsp;
+                                <label for="maxPrice">&nbsp; Max (Rs:)  &nbsp;</label>
+                                <input type="text" class="form-control" name="maxPrice" pattern="[0-9]*" Required> &nbsp; &nbsp;
                             </div>
                             <div class="form-group text-center">
                                 <input type="submit" value="Sort" name="priceSort" class="btn btn-success">
@@ -149,11 +157,11 @@
                         </form>
                     </div><br>
                 </div>
-            </div> -->
+            </div>
             <!--Store Products-->
             <div class="row">
                 <?php
-                    getOppo();
+                    getUnderstockingProduct();
                 ?>
             </div><br>
         </div>
