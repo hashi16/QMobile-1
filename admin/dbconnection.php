@@ -370,7 +370,7 @@
   }
   }
 
-  //get mobile phone from database to mobile phone page
+  //get mobile phone from database to understocking mobile phone page
   function getUnderstockingMobilePhone(){
     global $db;
     $mobilephone = "SELECT * FROM product WHERE (product_category='Mobile Phone' AND product_qty<=10)";
@@ -385,7 +385,7 @@
   }
   }
 
-  //get backcovers from database to back cover page
+  //get backcovers from database to understocking back cover page
   function getUnderstockingBackCover(){
     global $db;
     $backcover = "SELECT * FROM product WHERE (product_category='Back Cover' AND product_qty<=10)";
@@ -400,7 +400,7 @@
   }
   }
 
-  //get handfree from database to handfree page
+  //get handfree from database to understocking handfree page
   function getUnderstockingHandfree(){
     global $db;
     $handfree = "SELECT * FROM product WHERE (product_category='Handfree' AND product_qty<=10)";
@@ -415,7 +415,7 @@
   }
   }
 
-  //get charger from database to charger page
+  //get charger from database to understocking charger page
   function getUnderstockingCharger(){
     global $db;
     $charger = "SELECT * FROM product WHERE (product_category='Charger' AND product_qty<=10)";
@@ -430,7 +430,7 @@
   }
   }
 
-  //get battery from database to battery page
+  //get battery from database to understocking battery page
   function getUnderstockingBattery(){
     global $db;
     $battery = "SELECT * FROM product WHERE (product_category='Battery' AND product_qty<=10)";
@@ -445,7 +445,7 @@
   }
   }
 
-  //get tempered from database to tempered page
+  //get tempered from database to understocking tempered page
   function getUnderstockingTempered(){
     global $db;
     $tempered = "SELECT * FROM product WHERE (product_category='Tempered' AND product_qty<=10)";
@@ -460,7 +460,7 @@
   }
   }
 
-  //get huawei from database to huawei page
+  //get huawei from database to understocking huawei page
   function getUnderstockingHuawei(){
     global $db;
     $huawei = "SELECT * FROM product WHERE (manufacturer='Huawei' AND product_qty<=10)";
@@ -475,7 +475,7 @@
   }
   }
 
-  //get xiaomi from database to xiaomi page
+  //get xiaomi from database to understocking xiaomi page
   function getUnderstockingXiaomi(){
     global $db;
     $xiaomi = "SELECT * FROM product WHERE (manufacturer='Xiaomi' AND product_qty<=10)";
@@ -490,7 +490,7 @@
   }
   }
 
-  //get google from database to google page
+  //get google from database to understocking google page
   function getUnderstockingGoogle(){
     global $db;
     $google = "SELECT * FROM product WHERE (manufacturer='Google' AND product_qty<=10)";
@@ -505,7 +505,7 @@
   }
   }
 
-  //get nokia from database to nokia page
+  //get nokia from database to understocking nokia page
   function getUnderstockingNokia(){
     global $db;
     $nokia = "SELECT * FROM product WHERE (manufacturer='Nokia' AND product_qty<=10)";
@@ -520,7 +520,7 @@
   }
   }
 
-  //get oppo from database to oppo page
+  //get oppo from database to understocking oppo page
   function getUnderstockingOppo(){
     global $db;
     $oppo = "SELECT * FROM product WHERE (manufacturer='Oppo' AND product_qty<=10)";
@@ -535,7 +535,7 @@
   }
   }
 
-  //get apple from database to apple page
+  //get apple from database to understocking apple page
   function getUnderstockingApple(){
     global $db;
     $apple = "SELECT * FROM product WHERE (manufacturer='Apple' AND product_qty<=10)";
@@ -550,7 +550,7 @@
   }
   }
 
-  //get samsung from database to samsung page
+  //get samsung from database to understocking samsung page
   function getUnderstockingSamsung(){
     global $db;
     $samsung = "SELECT * FROM product WHERE (manufacturer='Samsung' AND product_qty<=10)";
@@ -590,6 +590,22 @@ function filterSearch(){
     global $db;
 
     $searchquery = "SELECT * FROM product WHERE product_name LIKE '%{$search}%' OR manufacturer LIKE '%{$search}%'";
+    $searchquery_result = mysqli_query($db,$searchquery);
+
+    while($row = mysqli_fetch_assoc($searchquery_result)){
+      store($row['product_name'],$row['actualprice'],$row['product_price'],$row['product_image'],$row['product_qty'],$row['id'],$row['product_category'],$row['manufacturer']);
+    }
+  }
+}
+
+//search box in product
+function filterUnderstockingSearch(){
+  if(isset($_POST['searchunderstock'])){
+    $searchunderstock=$_POST['searchboxunderstock'];
+    
+    global $db;
+
+    $searchquery = "SELECT * FROM product WHERE ((product_name LIKE '%{$searchunderstock}%' OR manufacturer LIKE '%{$searchunderstock}%')And product_qty<=10)";
     $searchquery_result = mysqli_query($db,$searchquery);
 
     while($row = mysqli_fetch_assoc($searchquery_result)){
