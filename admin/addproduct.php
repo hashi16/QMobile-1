@@ -145,6 +145,7 @@ session_start();
                             <option>Tempered Glass</option>
                             <option>Back Cover</option>
                             <option>Battery</option>
+                            <option>Other</option>
                         </select>
                     </div>
                 </div>
