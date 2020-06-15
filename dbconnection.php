@@ -306,7 +306,7 @@ if (isset($_GET['logout'])) {
     function getOrderDetails(){
       $user = $_SESSION['user']['username'];
       global $db;
-      $order = "SELECT * FROM orders  WHERE customer='$user'";
+      $order = "SELECT * FROM orders  WHERE customer='$user' ORDER BY orderId DESC";
       $order_result = mysqli_query($db,$order);
       while($row = mysqli_fetch_assoc($order_result)){
           orderdetails($row['orderId'],$row['orderdate'],$row['orderName'],$row['price']);
