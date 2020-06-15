@@ -119,7 +119,17 @@ session_start();
                 <div class="form-group row">
                     <label for="manufacturer" class="col-sm-2 col-form-label">Manufacturer</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="manufacturer" id="manufacturer" required>
+                        <!-- <input type="text" class="form-control" name="manufacturer" id="manufacturer" required> -->
+                        <select class="form-control" id="manufacturer" name="manufacturer" required>
+                            <option>Apple</option>
+                            <option>Samsung</option>
+                            <option>Huawei</option>
+                            <option>Xiaomi</option>
+                            <option>Google</option>
+                            <option>Nokia</option>
+                            <option>Oppo</option>
+                            <option>Other</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -127,7 +137,15 @@ session_start();
                 <div class="form-group row">
                     <label for="category" class="col-sm-2 col-form-label">Category</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="category" id="category" required>
+                        <!-- <input type="text" class="form-control" name="category" id="category" required> -->
+                        <select class="form-control" id="category" name="category" required>
+                            <option>Mobile Phone</option>
+                            <option>Handfree</option>
+                            <option>Charger</option>
+                            <option>Tempered Glass</option>
+                            <option>Back Cover</option>
+                            <option>Battery</option>
+                        </select>
                     </div>
                 </div>
             </div>
