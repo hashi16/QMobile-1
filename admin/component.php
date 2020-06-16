@@ -154,11 +154,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -185,11 +185,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -216,11 +216,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -247,11 +247,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -278,11 +278,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -309,11 +309,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -340,11 +340,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -371,11 +371,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -402,11 +402,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -433,11 +433,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -464,11 +464,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -495,11 +495,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
@@ -526,11 +526,11 @@ function backcover($productname,$actualprice,$productprice,$productimg,$productq
            <form class =\"\" action=\"store.php\" method=\"post\">
                <img src=\"$productimg\">
                <div class=\"overlay-right\">
-                   <a href='product.php?gid=$productid' class=\"btn btn-warning\" title=\"View\" >
+                   <a href='product.php?gid=$productid' class=\"btn btn-secondary\" title=\"View\" >
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-eye\"></i>
                    </a>
-                   <button type=\"submit\" class=\"btn btn-warning\" name=\"add\" title=\"Add To Cart\">
+                   <button type=\"submit\" class=\"btn btn-secondary\" name=\"add\" title=\"Add To Cart\">
                        <input type='hidden' name='product_id' value='$productid'>
                        <i class=\"fas fa-shopping-cart\"></i>
                    </button>
